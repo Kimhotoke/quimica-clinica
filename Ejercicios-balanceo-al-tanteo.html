@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Balanceo al Tanteo</title>
+    <link rel="stylesheet" href="css/estiloE.css">
+</head>
+<body>
+    <header>
+        <h1><strong>Ejercicios de Balanceo al Tanteo</strong></h1>
+    </header>
+    <nav>
+       <ul>
+        <li><a href="Balanceo-al-tanteo.html">Volver a la explicación</a></li>
+       </ul>
+    </nav>
+    <main>
+        <div class="ejercicioContenedor">
+
+            <form id="formulario-balanceo"> 
+                <div class="tarjeta-ejercicio activa">
+                    <h2>Oxidación del Hierro</h2>
+                    <div class="Formula1">
+                    <h2>
+                       <input type="number" id="coeficiente1" name="coeficiente1" min="0"> Fe +
+                       <input type="number" id="coeficiente2" name="coeficiente2" min="0"> O2 → 
+                       <input type="number" id="coeficiente3" name="coeficiente3" min="0"> Fe<sub>2</sub>O<sub>3</sub>
+                    </h2>
+                    <button type="button" id="verificar">Verificar Rx</button><br>
+                    <div id="resultado"></div>
+                </div>
+                </div>
+
+                <div class="tarjeta-ejercicio">
+                    <h2>Formación de Agua</h2>
+                    <div class="Formula2">
+                    <h2>
+                        <input type="number" id="coeficiente4" name="coeficiente4" min="0"> H<sub>2</sub>+
+                        <input type="number" id="coeficiente5" name="coeficiente5" min="0"> O<sub>2</sub> ↔
+                        <input type="number" id="coeficiente6" name="coeficiente6" min="0"> H<sub>2</sub>O
+                    </h2>
+                    <button type="button" id="verificar2">Verificar Rx</button><br>
+                    <div id="resultado2"></div>
+                </div>
+                </div>                
+                    
+                <div class="tarjeta-ejercicio">
+                    <h2>Reacción de Cinc y Ácido Clorhídrico</h2>
+                    <div class="Formula3">
+                    <h2>
+                        <input type="number" id="coeficiente7", name="coeficiente7", min="0">Zn +
+                        <input type="number", id="coeficiente8", name="coeficiente8", min="0">HCl → 
+                        <input type="number", id="coeficiente9", name="coeficiente9", min="0">ZnCl<sub>2</sub> +
+                        <input type="number", id="coeficiente10", name="coeficiente10", min="0">H<sub>2</sub>
+                    </h2>
+                    <button type="button", id="verificar3">Verificar Rx</button><br>
+                    <div id="resultado3"></div>
+                </div>
+                </div>
+
+                <div class="tarjeta-ejercicio">
+                    <h2></h2>
+                    <div class="Formula4">
+                        <h2>
+                            <input type="number" id="coeficiente11" name="coeficiente11" min="0">HCL +
+                            <input type="number" id="coeficiente12" name="coeficiente12" min="0">Ca(OH)<sub>2</sub> → 
+                            <input type="number" id="coeficiente13" name="coeficiente13" min="0">CaCl<sub>2</sub> +
+                            <input type="number" id="coeficiente14" name="coeficiente14" min="0">H<sub>2</sub>O
+                        </h2>
+                        <button type="button" id="verificar4">Verificar Rx</button><br>
+                        <div id="resultado4"></div>
+                    </div>
+                </div>
+
+                <div class="tarjeta-ejercicio">
+                    <h2></h2>
+                    <div class="Formula5">
+                        <h2>
+                            <input type="number" id="coeficiente15" name="coeficiente15" min="0">Al<sub>2</sub>O<sub>3</sub> +
+                            <input type="number" id="coeficiente16" name="coeficiente16" min="0">H<sub>2</sub>SO<sub>4</sub> → 
+                            <input type="number" id="coeficiente17" name="coeficiente17" min="0">Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> +
+                            <input type="number" id="coeficiente18" name="coeficiente18" min="0"> H<sub>2</sub>O
+                        </h2>
+                        <button type="button" id="verificar5">Verificar Rx</button>
+                        <div id="resultado5"></div>
+                    </div>
+                </div>
+                
+                <div class="tarjeta-ejercicio">
+                    <h2></h2>
+                    <div class="Formula6">
+                        <h2>
+                        <input type="number" id="coeficiente19" name="coeficiente19" min="0">P +
+                        <input type="number" id="coeficiente20" name="coeficiente20" min="0">O<sub>2</sub> → 
+                        <input type="number" id="coeficiente21" name="coeficiente21" min="0">P<sub>2</sub>O<sub>3</sub>
+                        </h2>
+                        <button type="button" id="verificar6">Verificar Rx</button>
+                        <div id="resultado6"></div>
+                    </div>
+                </div>
+
+                <div class="tarjeta-ejercicio">
+                    <h2></h2>
+                    <div class="Formula7">
+                        <h2>
+                            <input type="number" id="coeficiente22" name="coeficiente22" min="0">Na +
+                            <input type="number" id="coeficiente23" name="coeficiente23" min="0">H<sub>2</sub>O →
+                            <input type="number" id="coeficiente24" name="coeficiente24" min="0">NaOH +
+                            <input type="number" id="coeficiente25" min="0"> H<sub>2</sub> 
+                        </h2>
+                        <button type="buttone" id="verificar7">Verificar Rx</button>
+                        <div id="resultado7"></div>
+                    </div>
+                </div>
+
+                <div class="tarjeta-ejercicio">
+                    <h2></h2>
+                    <div class="Formula8">
+                        <h2>
+                            <input type="number" id="coeficiente26" name="coeficiente26" min="0">KClO<sub>3</sub> →
+                            <input type="number" id="coeficiente27" name="coeficiente27" min="0"> KCl +
+                            <input type="number" id="coeficiente28" name="coeficiente28" min="0">O<sub>2</sub>
+                        </h2>
+                        <button type="button" id="verificar8">Verificar Rx</button>
+                        <div id="resultado8"></div>
+                    </div>
+                </div>
+
+                <div class="tarjeta-ejercicio">
+                    <h2></h2>
+                    <div class="Formula9">
+                        <h2>
+                            <input type="number" id="coeficiente29" name="coeficiente29" min="0">Fe +
+                            <input type="number" id="coeficiente30" name="coeficiente30" min="0">HCL →
+                            <input type="number" id="coeficiente31" name="coeficiente31" min="0">FeCl<sub>3</sub> +
+                            <input type="number" id="coeficiente32" name="coeficiente32" min="0">H<sub>2</sub>
+                        </h2>
+                        <button type="button" id="verificar9">Verificar Rx</button>
+                        <div id="resultado9"></div>
+                    </div>
+                </div>
+
+                <div class="tarjeta-ejercicio">
+                    <h2></h2>
+                    <div class="Formula10">
+                        <h2>
+                            <input type="number" id="coeficiente33" name="coeficiente33" min="0">NaOH +
+                            <input type="number" id="coeficiente34" name="coeficiente34" min="0">CuCl<sub>2</sub> →
+                            <input type="number" id="coeficiente35" name="coeficiente35" min="0">Cu(OH)<sub>2</sub> +
+                            <input type="number" id="coeficiente36" name="coeficiente36" min="0">NaCl
+                        </h2>
+                        <button type="button" id="verificar10">Verificar Rx</button>
+                        <div id="resultado10"></div>
+                    </div>
+                </div>
+
+
+                <div class="navegación-tarjetas">
+                    <button type="button", id="btn-anterior", name="btn-anterior">Anterior</button>
+                    <span id="indicador-tarjeta">1 de 8</span>
+                    <button type="button", id="btn-siguiente", name="btn-siguiente">Siguiente</button>
+                </div>
+                <div class="limpiar">
+                    <button type="button" id="limpiar" name="limpiar">Limpiar</button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+<script  src="js/balanceo.js" defer></script>   
+</body>
+</html>

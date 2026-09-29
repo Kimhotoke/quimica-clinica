@@ -1,0 +1,110 @@
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #ffffff;
+    min-height: 100vh;
+    background: linear-gradient( 135deg, #2c3e50, #4ca1af);
+    color: #2c3e50;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    background:  rgba (255, 255, 2555, 0.95);
+    padding: 10px, 50px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+header h1 {
+    padding: 20px 20px;
+    font-size: 1.8rem;
+    color: #b3cee7;
+}
+
+nav {
+    list-style: none;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #2c3e50;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+ nav a:hover {
+    background-color: #ffffff;
+    color: #007bff;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.explicación {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 18px 20px;
+    border-radius: 12px 12px 0px 0px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 20);
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.explicación h1 {
+    text-align: center;
+}
+
+.ec {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 18px 20px;
+    border-radius: 12px 12px 0px 0px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.ec h2 {
+    text-align: center;
+}
+
+.ejemplo {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.ejemplo2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.ej {
+    list-style: none;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.ej a {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #2c3e50;
+    padding: 12px 20px;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.5s;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+.ej a:hover {
+    backgroun-color: #ffffff;
+    color: #007bff;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,310 @@
+/* body { 
+    background-color: #f0f0f0;
+    font-family: 'Times New Roman', Times, serif;
+}
+header {
+    color: rgb(2, 36, 26);
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+nav{
+    color: rgba (209, 51, 51, 0.795);
+    padding: 10px;
+    text-align: center;
+}
+.ejercicio {
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    text-align: center;
+}
+.ejercicio form {
+    color: rgb(0, 0, 0);
+    padding: 40px;
+    text-align: center;
+}
+.ejercicio form label {
+    color: rgb(0, 0, 0);
+    display: block;
+    margin: 10px 0 5px 4px;
+}
+.ejercicio form input[type="number"] {
+    padding: 5px;
+    margin: 5px;
+    width: 150px;
+    cursor: pointer;
+    height: 10%;
+
+}
+button {
+    padding: 10px 20px;
+    background-color : rgba(253, 136, 27, 0.459);
+    color: rgb(2, 36, 26);
+    border: none;
+    cursor: pointer;
+}
+.verificar {
+    color: rgb(0, 0, 0);
+    padding: 10;
+    text-align: justify;
+}
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    background: rgba (255, 255, 255, 0.95);
+    padding: 18px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    text-align: center;
+}
+header h1 {
+    font-size: 1.8rem;
+    color: #b3cee7;
+}
+
+nav ul {
+    list-style: none;
+    color: #1a252f;
+}
+nav a{
+    text-decoration: none;
+    background-color: rgba(255, 255, 255,  0.85);
+    color: #2c3e50;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0,1);
+}
+
+nav a:hover {
+    background-color: #ffffff;
+    color: #007bff;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+
+.ejercicioContenedor {
+    max-width: 650px;
+    width: 100%;
+    margin: 80px auto;
+    padding: 10px;
+}
+
+.tarjeta-ejercicio {
+    display: none;
+    background: #e2ecf5;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(181, 230, 207, 0.651);
+    text-align: center;
+}
+
+.tarjeta-ejercicio.activa {
+    display: block;
+}
+
+
+
+.tarjeta-ejercicio input[type="number"] {
+    width: 60px;
+    padding: 10px;
+    font-size: 0.1rem;
+    text-align: center;
+    height: 40px;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #1e293b;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.2s;
+}
+
+.tarjetas-ejercicio input[type="number"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+button[id^="verificar"] {
+    background-color: #27ae60;
+    color: #ffffff;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.3s;
+}
+
+button[id^="verificar"]:hover {
+    background-color: #219150;
+    transform: translateY(-1px);
+}
+
+div[id^="resultado"] {
+    margin-top: 15px;
+    font-weight: bold;
+    min-height: 24px;
+
+}
+
+.navegación-tarjetas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 10px;
+    font-size: 0.9rem;
+}
+
+.navegcación-tarjetas button {
+    background-color: #ffffff;
+    color: #2c3e50;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0,2s;
+
+}
+
+.navegación-tarjetas button:hover:not(:disabled) {
+    background-color: #007bff;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+
+.navegación-tarjetas button:disabled {
+    background-color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.6);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+#indicador-tarjeta {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.05rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.limpiar {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.limpiar button {
+    padding: 10px, 14px;
+    font-size: 0.9rem;
+    background-color: #ffffff;
+    color: #2c3e50;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0,2s;
+}
+.limpiar button:hover:not(:disabled) {
+    background-color: #007bff;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+.limpiar button:disabled {
+    background-color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.6);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px 8px; 
+    }
+
+    header {
+        padding: 10px 16px;
+        margin-bottom: 12px;
+        width: 100%;
+        max-width: 340px;
+    }
+
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+    .tarjeta-ejercicio {
+        padding: 20px 12px;
+    }
+
+    .tarjeta-ejercicio h3 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .tarjeta-ejercicio h2 {
+        font-size: 1.1rem;
+        gap: 6px 4px;
+    }
+
+    .tarjeta-ejercicio input[type="number"] {
+        width: 42px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    button[id^="verificar"] {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .navegacion-tarjetas {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .navegacion-tarjetas button {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+
+    #indicador-tarjeta {
+        font-size: 0.95rem;
+    }
+}
+

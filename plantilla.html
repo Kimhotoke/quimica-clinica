@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla de Hemograma</title>
+    <link rel="stylesheet" href="css/plantilla.css">
+</head>
+<body>
+    <header>
+        <h1>Hematología</h1>
+    </header>
+    <div class="contenedor-nav">
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a> </li>
+        </ul>
+    </nav>
+    </div>
+    <main>
+        <div class="tablas">
+            <table border="4">
+                <thead>
+                    <tr>
+                        <th>Prueba</th>
+                        <th>Resultado </th>
+                        <th>Unidades </th>
+                        <th>Alarma </th>
+                        <th>Valor de Referencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5"><b>Hematología Completa</b></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="5"><b>Serie Blanca</b></td>
+                    </tr>
+                    <tr>
+                        <td>Leucocitos</td>
+                        <td><input type="number" id="leucocito" step="0.1" name="lecucito" min="0"> </td>
+                        <td>10<sup>3</sup>/uL</td>
+                        <td><div id="alarma"></div></td>
+                        <td>4.00 - 10.00</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="5"><b>Formula Leucocitaria</b></td>
+                    </tr>
+                    <tr>
+                        <td>Neutrófilos</td>
+                        <td><input type="number" id="neutrofilo" step="0.1" name="neutrofilo" min="0"></td>
+                        <td>%</td>
+                        <td><div id="alarma2"></div></td>
+                        <td>50.00 - 70.00</td>
+                    </tr>
+                    <tr>
+                        <td>Linfocitos</td>
+                        <td><input type="number" id="linfocito" step="0.1" name="linfocito" min="0"></td>
+                        <td>%</td>
+                        <td><div id="alarmal"></div></td>
+                        <td>20.00 - 40.00</td>
+                    </tr>
+                    <tr>
+                        <td>Monocitos</td>
+                        <td><input type="number" id="monocito" step="0.1" name="monocito" min="0"></td>
+                        <td>%</td>
+                        <td><div id="alarma3"></div></td>
+                        <td>3.00 - 12.00</td>
+                    </tr>
+                    <tr>
+                        <td>Eosinófilos</td>
+                        <td><input type="number" id="eosinofilo" step="0.1" name="eosinofilo" min="0"></td>
+                        <td>%</td>
+                        <td><div id="alarma4"></div></td>
+                        <td>0.500 - 5.00</td>
+                    </tr>
+                    <tr>
+                        <td>Basofilos</td>
+                        <td><input type="number" id="basofilo", step="0.1" name="basofilo" min="0"></td>
+                        <td>%</td>
+                        <td><div id="alarma5"></div></td>
+                        <td>0.00 - 1.00</td>
+                    </tr>
+                    <tr>
+                        <td>Neutrófilos#</td>
+                        <td><input type="number" id="noNeutrofilo" step="0.1" name="noNeutrofilo" min="0"></td>
+                        <td>10<sup>3</sup>/uL</td>
+                        <td><div id="alarma6"></div></td>
+                        <td>2.00 - 7.00</td>
+                    </tr>
+                    <tr>
+                        <td>Linfocitos#</td>
+                        <td><input type="number" id="noLinfocito" step="0.1" name="noLinfocitos" min="0"></td>
+                        <td>10<sup>3</sup>/uL</td>
+                        <td><div id="alarma7"></div></td>
+                        <td>0.80 - 4.00</td>
+                    </tr>
+                    <tr>
+                        <td>Monocitos#</td>
+                        <td><input type="number", step="0.1" id="noMonocito" name="noMonocitos" min="0"></td>
+                        <td>10<sup>3</sup>/uL</td>
+                        <td><div id="alarma8"></div></td>
+                        <td>0.12 - 1.20</td>
+                    </tr>
+                    <tr>
+                        <td>Eosinófilos#</td>
+                        <td><input type="number" id="noEosinofilo" step="0.1" name="noEosinofilos" min="0"></td>
+                        <td>10<sup>3</sup>/uL</td>
+                        <td><div id="alarma9"></div></td>
+                        <td>0.02 - 0.50</td>
+                    </tr>
+                    <tr>
+                        <td>Basofilos#</td>
+                        <td><input type="number" step="0.1" id="noBasofilo" name="noBasofilos" min="0"></td>
+                        <td>10<sup>3</sup>/uL</td>
+                        <td><div id="alarma10"></div></td>
+                        <td>0.00 - 0.10</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="5"><b>Serie Roja</b></td>
+                    </tr>
+                    <tr>
+                        <td>Eritrocitos</td>
+                        <td><input type="number" step="0.1" id="eritrocito" name="eritrocito" min="0"></td>
+                        <td>10<sup>6</sup>/uL</td>
+                        <td><div id="alarma11"></div></td>
+                        <td>3.50 - 5.50</td>
+                    </tr>
+                    <tr>
+                        <td>Hemoglobina</td>
+                        <td><input type="number" step="0.1" id="hemoglobina" name="hemoglobina" min="0"></td>
+                        <td>g/dL</td>
+                        <td><div id="alarma12"></div></td>
+                        <td>11.00 - 16.00 </td>
+                    </tr>
+                    <tr>
+                        <td>Hematocrito</td>
+                        <td><input type="number" step="0.1" id="hematocrito" name="hematocrito" min="0"></td>
+                        <td>%</td>
+                        <td><div id="alarma13"></div></td>
+                        <td>37.00 - 54.00</td>
+                    </tr>
+                    <tr>
+                        <td>MCV (Volumen Corpuscular Medio)</td>
+                        <td><input type="number" step="0.1" id="mcv" name="mcv" min="0"> </td>
+                        <td>fL</td>
+                        <td><div id="alarma14"></div></td>
+                        <td>80.00 - 100.00</td>
+                    </tr>
+                    <tr>
+                        <td>MHC (Hemoglobina Corpuscular Media)</td>
+                        <td><input type="number" step="0.1" id="mhc" name="mhc" min="0"></td>
+                        <td>pg</td>
+                        <td><div id="alarma15"></div></td>
+                        <td>27.00 - 34.00</td>
+                    </tr>
+                    <tr>
+                        <td>MCHC (Concentración de Hemoglobina Corpuscular Media)</td>
+                        <td><input type="number" step="0.1" id="mchc" name="mchc" min="0"></td>
+                        <td>g/dL</td>
+                        <td><div id="alarma16"></div></td>
+                        <td>32.00 - 36.00</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="5"><b>Trombocitos</b></td>
+                    </tr>
+                    <tr>
+                        <td>Plaquetas</td>
+                        <td><input type="number" step="0.1" id="plaqueta", name="plaqueta" min="0"></td>
+                        <td>10<sup>3</sup>/uL</td>
+                        <td><div id="alarma17"></div></td>
+                        <td>100 - 300</td>
+                    </tr>
+                    <tr>
+                        <td>RDW-CV (Coeficiente de variación)</td>
+                        <td><input type="number" step="0.1" id="rdwCv" name="rdwCv", min="0"></td>
+                        <td>%</td>
+                        <td><div id="alarma18"></div></td>
+                        <td>11.0 - 16.0</td>
+                    </tr>
+                    <tr>
+                        <td>RDW-SD (Distribución del Volumen de los Glóbulos Rojos)</td>
+                        <td><input type="number" step="0.1" id="rdwSd" name="rdwSd", min="0"></td>
+                        <td>fL</td>
+                        <td><div id="alarma19"></div></td>
+                        <td>35.0 - 56.0</td>
+                    </tr>
+                    <tr>
+                        <td>MPV (Volumen Plaquetario Medio)</td>
+                        <td><input type="number" step="0.1" id="mpv" name="mpv" min="0"></td>
+                        <td>fL</td>
+                        <td><div id="alarma20"></div></td>
+                        <td>6.5 - 12.0</td>
+                    </tr>
+                    <tr>
+                        <td>PDW (Ancho de Distribución Plaquetaria)</td>
+                        <td><input type="number" step="0.1" id="pdw" name="pdw" min="0"></td>
+                        <td>-</td>
+                        <td><div id="alarma21"></div></td>
+                        <td>15.0 - 17.0</td>
+                    </tr>
+                    <tr>
+                        <td>PCT (Plaquetocrito)</td>
+                        <td><input type="number" step="0.1" id="pct" name="pct" min="0"></td>
+                        <td>%</td>
+                        <td><div id="alarma22"></div></td>
+                        <td>0.108 - 0.282</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="verifica">
+            <button type="button" id="verificar" name="verificar">Verificar</button>
+            <button type="button" id="limpiar" name="limpiar">Limpiar</button>
+        </div>
+
+        <section>
+            <div id="recomendaciones"></div>
+        </section>
+
+    </main>
+<script src="js/hemograma.js" defer></script>
+</body>
+</html>
