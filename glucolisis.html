@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalísis</title>
+    <link rel="stylesheet" href="css/glucolisis.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html">Glucólisis Vía Catalisis</a>
+    </header>
+    
+    <main class="main">
+        <h1>Fase de Preparación</h1>
+
+        <article class="step" id="step-1" data-respuesta="Glucoquinasa"
+        data-nota="Glucoquinasa cataliza la fosforilación de la glucosa en el carbono 6, utilizando una moéluca de ATP, siendo la primera reacción irreversible de la vía,con ayuda de un cofactor de Mg+2">
+            <h2>Glucosa → Glucosa-6-P</h2>
+            <div class="preguntas">
+                <button type="button" class="pregunta">Hexoquinasa</button>
+                <button type="button" class="pregunta">Glucoquinasa</button>
+                <button type="button" class="pregunta">fructoquinasa</button>
+                <button type="button" class="pregunta">fosfoglucosa</button>
+            </div>
+            <div class="validar">
+                <button type="button" class="verificar">Verificar</button>
+            </div>
+
+            <div class="resultado"></div>
+        </article>
+
+        <article class="step step-oculto" id="step-2" data-respuesta="Fosfoglucosa isomerasa" data-nota="La GPI cataliza la isomerización reversible de la glucosa-6-P a fructosa-6-P, con la ayuda del cofactor Mg+2">
+            <h2>Glucosa-6-P ↔ Fructosa-6-P</h2>
+            <div class="preguntas">
+                <button type="button" class="pregunta">Fosfoexosa isomerasa</button>
+                <button type="button" class="pregunta">Enolasa</button>
+                <button type="button" class="pregunta">Quimotripsina</button>
+                <button type="button" class="pregunta">Fosfoglucosa isomerasa</button>
+            </div>
+            <div class="validar">
+                <button type="button" class="verificar">Verificar</button>
+            </div>
+
+            <div class="resultado"></div>
+        </article>
+
+        <article class="step step-oculto" id="step-3" data-respuesta="Fosfofructosaquinasa-1" data-nota="La FFk-1 cataliza la fosforilación de la fructosa-6-P a fructosa-1,6-BiP gastando una segunda molécula de ATP, segunda reacción irreversible y constituye la enzima clave con mayor regulación alósterica de la glucolisis, con la ayuda del cofactor Mg+2">
+            <h2>Fructosa-6-P → Fructosa-1,6-BiP</h2>
+            <div class="preguntas">
+                <button type="button" class="pregunta">Fosfofructosaquinasa-1</button>
+                <button type="button" class="pregunta">Fosfofructosaquinasa-2</button>
+                <button type="button" class="pregunta">Fosfoenolpiruvato</button>
+                <button type="button" class="pregunta">Fosfoglicerato mutasa-2</button>
+            </div>
+            <div class="validar">
+                <button type="button" class="verificar">Verificar</button>
+            </div>
+
+            <div class="resultado"></div>
+        </article>
+
+        <article class="step step-oculto" id="step-4" data-respuesta="Aldolasa" data-nota="La aldolasa cataliza el rompimiento reversible de la fructosa-1,6-BiP en dos triosas fosfatadas, con ayuda del cofacto Mg+2">
+            <h2>Fructosa-1,6-BiP ↔ Gliceraldehído-3-P + Dihidroxiacetona-P</h2>
+            <div class="preguntas">
+                <button type="button" class="pregunta">Lactato deshidrogenasa</button>
+                <button type="button" class="pregunta">Aldolasa</button>
+                <button type="button" class="pregunta">Fosfoglucomutasa</button>
+                <button type="button" class="pregunta">Piruvato deshidrogenasa</button>
+            </div>
+            <div class="validar">
+                <button type="button" class="verificar">Verificar</button>
+            </div>
+            
+            <div class="resultado"></div>
+        </article>
+
+        <article class="step step-oculto" id="step-5" data-respuesta="Fosfotriosa isomerasa" data-nota="La fosfotriosa isomerasa cataliza la interconversión reversible entre la dihidroxiacetona-P a gliceraldehído-3-P, permitiendo que ambas triosas continuen por la vía catabolica, siempre con ayuda del cofactor Mg+2">
+            <h2>DHA-P ↔ Glucosa-3-P</h2>
+            <div class="preguntas">
+                <button type="button" class="pregunta">Enolasa</button>
+                <button type="button" class="pregunta">Fosfoglicerato mutasa</button>
+                <button type="button" class="pregunta">Fosfogliceratoquinasa</button>
+                <button type="button" class="pregunta">Fosfotriosa isomerasa</button>
+            </div>
+            <div class="validar">
+                <button type="button" class="verificar">Verificar</button>
+            </div>
+            
+            <div class="resultado"></div>
+        </article>
+
+        <div class="fase-titulo step-oculto" id="fase-rendimiento">
+        <h1>Fase de Rendimiento</h1>
+        </div>
+
+        <article class="step step-oculto" id="step-6" data-respuesta="Gliceraldehído 3 fosfato deshidrogenasa" data-nota="El G3PD cataliza la oxidación y fosforilación del gliceraldehído-3-P reduciendo la molécula de NAD+ a NADH + H, por cada triosas, con ayuda del cofactor Mg+2">
+            <h2>Gliceraldehído-3-P ↔ 1,3-Bifosfogliceratocinasa</h2>
+            <div class="preguntas">
+                <button type="button" class="pregunta">Mutasa</button>
+                <button type="button" class="pregunta">Gliceraldehído 3 fosfato deshidrogenasa</button>
+                <button type="button" class="pregunta">Fosfogliceratoquinasa</button>
+                <button type="button" class="pregunta">Fosfatasa</button>
+            </div>
+            <div class="validar">
+                <button type="button" class="verificar">Verificar</button>
+            </div>
+            
+            <div class="resultado"></div>
+        </article>
+
+        <article class="step step-oculto" id="step-7" data-respuesta="Fosfogliceratoquinasa" data-nota="El fosfoglicerato quinasa transfiere un grupo fosfato del 1,3-Bifosfoglicerato al ADP para formar 3-Fosfoglicerato y ATP (primera síntesis de ATP a nivel sustrato), con ayuda del cofactor Mg+2">
+            <h2>1,3-Bifosfogliceratocinasa ↔ 3-Fosfoglicerato</h2>
+            <div class="preguntas">
+                <button type="button" class="pregunta">Fosfogliceratoquinasa</button>
+                <button type="button" class="pregunta">Fosfofructosaquinasa</button>
+                <button type="button" class="pregunta">Aldolasa</button>
+                <button type="button" class="pregunta">Hexoquinasa</button>
+            </div>
+            <div class="validar">
+                <button type="button" class="verificar">Verificar</button>
+            </div>
+            
+            <div class="resultado"></div>
+        </article>
+
+        <article class="step step-oculto" id="step-8" data-respuesta="Fosfogliceratomutasa" data-nota="El fosfoglicerato mutasa cataliza el desplazamiento del grupo fosfato del carbono 3 al carbono 2, convirtiendo el 3-fosfoglicerato en 2-fosfoglicerato, con ayuda del cofactor Mg+2">
+            <h2>3-Fosfoglicerato ↔ 2-Fosfoglicerato</h2>
+            <div class="preguntas">
+                <button type="button" class="pregunta">Fosfogliceratomutasa</button>
+                <button type="button" class="pregunta">Fosfogliceratoquinasa</button>
+                <button type="button" class="pregunta">Enolasa</button>
+                <button type="button" class="pregunta">Glucoquinasa</button>
+            </div>
+            <div class="validar">
+                <button type="button" class="verificar">Verificar</button>
+            </div>
+            
+            <div class="resultado"></div>
+        </article>
+
+        <article class="step step-oculto" id="step-9" data-respuesta="Enolasa" data-nota="La enolasa cataliza la deshidratación del 2-fosfoglicerato, para generar fosfoenolpiruvato, un compuesto de alta energia que equivale a 3 ATP, con la ayuda del cofactor Mg+2">
+            <h2>2-Fosfoglicerato ↔ Fosfoenolpiruvato</h2>
+            <div class="preguntas">
+                <button type="button" class="pregunta">Enolasa</button>
+                <button type="button" class="pregunta">Mutasa</button>
+                <button type="button" class="pregunta">fosfoenolasa</button>
+                <button type="button" class="pregunta">fosfomutasa</button>
+            </div>
+            <div class="validar">
+                <button type="button" class="verificar">Verificar</button>
+            </div>
+            
+            <div class="resultado"></div>
+        </article>
+
+        <article class="step step-oculto" id="step-10" data-respuesta="Piruvatoquinasa" data-nota="La piruvatoquinasa transifere un grupo fosfato del fosfoenolpiruvato al ADP para producir piruvato y ATP, representa la tercera reacción irreversible de la glucolísis, con ayuda de dos cofactores Mg+2 y K+">
+            <h2>Fosfoenolpiruvato → Piruvato</h2>
+            <div class="preguntas">
+                <button type="button" class="pregunta">Aldolasa</button>
+                <button type="button" class="pregunta">Piruvatomutasa</button>
+                <button type="button" class="pregunta">Piruvatoquinasa</button>
+                <button type="button" class="pregunta">FFK-1</button>
+            </div>
+            <div class="validar">
+                <button type="button" class="verificar">Verificar</button>
+            </div>
+            
+            <div class="resultado"></div>
+        </article>
+
+        <div class="resumen-final step-oculto" id="resumen">
+            <h2>¡Glucólisis Completada!</h2>
+    
+            <div class="resumen-grid">
+                <div class="resumen-card">
+                    <h3>Balance Parcial</h3>
+                    <p class="subtitulo">Por cada molécula de glucosa</p>
+                    <ul>
+                        <li><strong>ATP consumido:</strong> 2</li>
+                        <li><strong>ATP producido:</strong> 4</li>
+                        <li><strong>NADH producido:</strong> 2</li>
+                        <li><strong>Piruvato producido:</strong> 2</li>
+                    </ul>
+                </div>
+
+                <!-- Balance Total (con Ganancia Neta) -->
+                <div class="resumen-card destacado">
+                    <h3>Balance Total</h3>
+                    <p class="subtitulo">Ganancia neta por glucosa</p>
+                    <ul>
+                        <li><strong>ATP neto:</strong> 8 <span class="detalle">(2 ATP + 2 * 3 NADH)</span></li>
+                        <li><strong>NADH neto:</strong> 2</li>
+                        <li><strong>Piruvato neto:</strong> 2</li>
+                        <li><strong>Agua liberada:</strong> 2</li>
+                    </ul>
+                </div>
+
+                <button type="button" class="boton-reiniciar" id="reiniciar">Reiniciar glucólisis</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/glucoli.js" defer></script>
+</body>
+</html>

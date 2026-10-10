@@ -1,0 +1,497 @@
+
+/*Importante para que no se rompa las imagenes dentro de grid.*/
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, san-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #3d556d, #81e3f1);
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.021);
+    padding: 18px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+header:hover {
+    box-shadow: 0 4px 10px rgba(205, 239, 255, 0.733);
+}
+
+header h1 {
+    color: #b9cee4;
+}
+header h1:hover {
+    text-shadow: 0 1px 10px rgba(171, 230, 227, 0.932);
+    color:#e1fff4;
+}
+
+.apartado {
+    color:#b3cee7;
+    text-align: left;
+    padding: 10px;
+    margin: 5px;
+    background-color: #2c3e5018; 
+    border-radius: 20px;
+}
+
+.apartado h2 {
+    color:#b9cee4;
+}
+
+.apartado h2:hover {
+    transform: translateY(-5px);
+    color:rgb(247, 252, 250); 
+    text-shadow: 0 4px 8px rgba(10, 107, 78, 0.87);
+
+}
+
+.menu-navegacion {
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    background-color: rgb(201, 243, 248);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0 0 0 / 80%);
+    border-radius: 20px;
+    list-style: none;
+    margin-bottom: 10px;
+    padding: 2px;
+}
+
+#hemograma {
+    scroll-margin-top: 180px;
+}
+
+#serieBlanca {
+    scroll-margin-top: 180px;
+}
+
+#serieRoja {
+    scroll-margin-top: 180px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 1.9rem;
+    gap: 25px;
+    margin: 10px;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color:#2c3e50;
+    font-weight: 500;
+
+}
+
+nav a:hover {
+    background-color: rgba(0, 0, 0, 0.603);
+    color: #ffffff;
+    text-shadow: 0 6px 14px rgba(183, 218, 173, 0.527);
+    border-radius: 10px;
+}
+
+.intro {
+    background-color: #ffffff;
+    padding: 18px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.intro h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #0a0f14;
+}
+
+.tarjetas-elementos {
+    /*
+    background-color:#ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 12px;
+    padding: 10px 20px;
+    border-top: 20px solid #5fd8ced3;
+    border-radius: 0px 0px 20px 20px;
+    width: 50%px;
+    height: 50%;
+    *//*Tarjeta en columna horizontal*/
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto; /*Activa el scroll horizontal*/
+    gap: 15px;
+    padding-bottom: 15px;
+    scroll-behavior: smooth; /*Desplazamiento suave*/
+    scroll-snap-type: x mandatory; /*Fuerza el imán horizontal*/
+    background-color: #fff;
+    padding: 20px;
+    border-top: 20px solid #5fd8ced3;
+    border-radius: 20px;
+    margin-bottom: 20px;
+
+}
+
+.tarjeta {
+    background-color:#b9cee4;
+    color: rgb(48, 59, 66);
+    border-color: rgba(10, 107, 78, 0.87);
+    border-radius: 15px;
+    padding: 10px;
+    flex: 0 0 250px; /*No cre, ni se encoge, con un ancho de 250*/
+    scroll-snap-align: center; /*Cada tarjeta se centra al detenerse*/
+}
+
+.tarjeta h2 {
+    color:#0a0f14;
+}
+
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.9);
+}
+
+.intro h2 {
+    text-align: center;
+    font-size: 1.98rem;
+    color: #0a0f14;
+}
+
+.intro p {
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.serie-roja {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0px, 1fr));
+    gap: 20px;
+    /*background-image: url('../imagenes/eritrocitos.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    */
+    background-color:#fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px ;
+    border-top: 20px solid #5fd8ced3;
+}   
+
+.tarjeta-elementos::-webkit-srcrollbar {
+    height: 8px;
+}
+
+.tarjeta-elementos::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 10px;
+}
+
+.tarjeta-elementos::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.tarjeta-roja {
+    background-color: #fc7d74c9;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    border: 9px solid rgb(73, 26, 26);
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.texto {
+    background-color:#f7d1d1d7;
+    border-radius: 20px;
+    padding: 10px;
+    height: auto;
+    width: auto;
+    border: 3px solid black;
+}
+
+.texto, h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: rgba(88, 25, 6, 0.925);
+    
+}
+
+.texto p {
+    color: rgba(23, 32, 46, 0.8); 
+}
+
+.tarjeta-roja:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 4px 8px rgba(88, 25, 6, 0.925);
+    background-color:rgb(197, 82, 47);
+}
+
+.forma {
+    padding: 0px;
+    margin: 0px;
+
+}
+
+.forma img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 1.4rem;
+    color:#ffffff;
+    background-color:rgba(23, 32, 46, 0.8);
+    padding: 10px 20px;
+    width: fit-content;
+    margin-top: 10px;
+    border-radius: 20px 20px 0px 0px;
+    margin: 0 auto -6px auto;
+
+}
+
+.titulo1 {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #ffffff;
+    background-color: rgba(23, 32, 46, 0.8);
+    padding: 10px 20px;
+    width: fit-content;
+    margin-top: 10px;
+    border-radius: 20px 20px 0px 0px;
+    margin: 0 auto -20px auto;
+}
+
+.formab {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+.formab img {
+    width:  300px;
+    height: auto;
+    object-fit: cover;
+}
+
+.incisos li {
+    text-align: justify;
+    padding: 10px;
+    letter-spacing: 1px;
+}
+
+.plantilla-hemograma {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    list-style: none;
+}
+
+.plantilla-hemograma a {
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.plantilla-hemograma a:hover {
+    color:#0a0f14;
+}
+
+button {
+    background-color:#0a0f14;
+
+    padding: 10px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #e5fdf9;
+    transform: translateY(-5px);
+}
+
+/*Responsitive para Telefonos*/
+@media (max-width: 650px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    .menu-navegacion {
+        flex-direction: column; /* El nav se apila */
+        padding: 5px;
+        gap: 3px;
+        border-radius: 10px;
+    }
+
+    .menu {
+        flex-direction: row; /* Los enlaces se apilan */
+        font-size: 0.81rem;
+        gap: 4px;
+        margin: 0px;
+        padding: 0;
+        flex-wrap: wrap;
+    }
+
+    .menu a {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+    }
+
+    .intro {
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .intro h1 {
+        font-size: 1.5rem;
+    }
+
+    .intro h2 {
+        font-size: 1.2rem;
+    }
+
+    .intro p {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+
+    .tarjetas-elementos {
+        padding: 8px;
+        gap: 8px;
+        border-top: 10px solid #5fd8ced3;
+        border-radius: 10px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+    }
+
+    .tarjeta {
+        flex: 0 0 160px; /* Tarjetas más angostas */
+        padding: 10px;
+        min-width: 160px;
+        box-sizing: border-box;
+    }
+
+    .tarjeta h2 {
+        font-size: 1.1rem;
+    }
+
+    .tarjeta p {
+        font-size: 0.9rem;
+    }
+
+    /* Serie Roja - Una sola columna en móvil */
+    .serie-roja {
+        grid-template-columns: 1fr; /* 1 columna */
+        gap: 12px;
+        margin: 5px;
+        padding: 10px;
+        border-top: 10px solid #5fd8ced3;
+        border-radius: 12px;
+    }
+
+    .tarjeta-roja {
+        padding: 15px;
+        margin: 0;
+        border-width: 5px;
+        border-radius: 15px;
+    }
+
+    .titulo, .titulo1 {
+        font-size: 1rem;
+        padding: 6px 12px;
+        margin-bottom: -7px;
+    }
+
+    .texto {
+        padding: 8px;
+        width: 100%; /* Ocupa todo el ancho de la tarjeta */
+    }
+
+    .texto h2 {
+        font-size: 1.1rem;
+    }
+
+    .texto p {
+        font-size: 0.85rem;
+        text-align: left;
+    }
+
+    .forma img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .formab img {
+        width: 100%; /* La imagen ocupa todo el ancho */
+        max-width: 280px;
+    }
+
+    .incisos li {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 1rem;
+        width: 100%; /* Ocupan todo el ancho */
+    }
+
+    .plantilla-hemograma {
+        flex-direction: column; /* Los botones se apilan */
+        gap: 8px;
+    }
+
+    .plantilla-hemograma a {
+        font-size: 1.1rem;
+        padding: 8px;
+    }
+}
