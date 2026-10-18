@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="css/balanceo.css">
+</head>
+<body>
+    <div class="grid">
+        <header class="header">
+            <h1 class="titulo">Biblioteca</h1>
+            <p>Elaborado por Ever Contreras</p>
+        </header>
+        <aside class="aside">
+            <div class="navegacion-inicial">
+                <button type="button" class="nav-inicial" onclick="window.location.href='index.html'">
+                    <img src="imagenes/logo-inicio.png" alt="inicio">
+                    <h2>Inicio</h2>
+                </button>
+                <button type="button" class="nav-inicial">
+                    <img src="imagenes/logo-tema.png" alt="inicio">
+                    <h2>Temas</h2>
+                </button>
+                <button type="button" class="nav-inicial">
+                    <img src="imagenes/logo-recurso.png" alt="inicio">
+                    <h2>Recursos</h2>
+                </button>
+            </div>
+            <div class="usuario">
+                <img src="imagenes/logo-usuario.png" alt="inicio">
+                <h2>Usuario</h2>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </aside>
+        <div class="navegacion-temas">
+            <div class="lista">
+                <h2>Explorar</h2>
+                <button type="button" class="botonlista"id="categorias">Categorias</button>
+            </div>
+            <div class="nav-temas">
+                <button type="button" class="navmain">Todos</button>
+                <button type="button" class="navmain">Teoría</button>
+                <button type="button" class="navmain">Prácticas</button>
+                <button type="button" class="navmain">Ejemplos</button>
+                <button type="button" class="navmain">Referencias</button>
+            </div>
+        </div>
+        <main class="main">
+            <!--Contenido main-->
+            <article class="contenido1">
+                <!-- Cabecera de la tarjeta -->
+                <div class="tarjeta-superior">
+                    <div class="tarjeta-icono">
+                        <img src="imagenes/logo-ecuacion.jpg" alt="logo balanceo">
+                    </div>
+                    <div class="tarjeta-textos">
+                        <h2>Balanceo al Tanteo</h2>
+                        <div class="tarjeta-meta">
+                            <span></span> • <span>Química</span>
+                            <span class="etiqueta custom">MÉTODO</span>
+                            <span class="etiqueta codigo">&lt;/&gt; EJERCICIOS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenido interno de la tarjeta -->
+                <div class="tarjeta-contenido-interno">
+                    
+                    <p class="tarjeta-descripcion">
+                        El balanceo de ecuaciones químicas es un proceso fundamental en la química que asegura que la ley de conservación de la masa se cumpla. Una ecuación química representa una reacción química, mostrando los reactivos y productos involucrados. Para balancear una ecuación, se deben ajustar los coeficientes estequiométricos de los compuestos para que el número de átomos de cada elemento sea igual en ambos lados de la ecuación.
+                    </p>
+                    <p>
+                        El método del tanteo es una técnica comúnmente utilizada para balancear ecuaciones químicas. Consiste en ir ajustando los coeficientes de los compuestos de manera tentativa hasta lograr un equilibrio entre los átomos presentes en los reactivos y productos. Este método requiere paciencia y práctica, ya que puede implicar varios intentos antes de encontrar la combinación correcta de coeficientes.
+                    </p>
+                    <p>
+                        Es importante recordar que al balancear una ecuación química, no se deben cambiar los subíndices de los compuestos, ya que esto alteraría la identidad química de las sustancias involucradas. Solo se deben modificar los coeficientes, que indican la cantidad relativa de cada sustancia en la reacción.
+                    </p>
+
+                    <hr class="divisor-neo">
+
+                    <h3>Ejemplo de balanceo al tanteo</h3>
+                    <p>Consideremos la siguiente reacción de combustión del metano (CH₄), con oxígeno (O₂), para producir dióxido de carbono (CO₂) y H₂O:</p>
+                    
+                    <div class="caja-ejemplo-ecuacion">
+                        __CH₄ + __O₂ → __CO₂ + __H₂O
+                    </div>
+                    
+                    <p>Para balancearla, seguimos los siguientes pasos:</p>
+                    <ol class="lista-neo">
+                        <li>Balanceamos primeramente los Metales, luego los no metales y por último los gases.</li>
+                        <li>Podemos observar que del lado izquierdo tenemos dos átomos de hidrógeno en los productos y cuatro átomos de hidrógeno en los reactivos, por lo tanto modificamos el coeficiente del H₂O para que sea igual al de los reactivos.</li>
+                        <li>Ahora que ya están balanceados los átomos de hidrógeno, procedemos a balancear los átomos de oxígeno, en este caso en los productos tenemos cuatro átomos de oxígeno y en los reactivos tenemos dos átomos de oxígeno, por lo tanto modificamos el coeficiente del O₂ para que sea igual al de los productos.</li>
+                    </ol>
+                    
+                    <p>El resultado balanceado sería:</p>
+                    <div class="caja-ejemplo-ecuacion exitoso">
+                        CH₄ + 2O₂ → CO₂ + 2H₂O
+                    </div>
+
+                    <div class="contenedor-boton-plantilla" style="margin-top: 30px;">
+                        <a href="ejercicio-balanceo.html" class="boton-plantilla">Ejercicios de práctica al tanteo</a>
+                    </div>
+
+                </div>
+            </article>
+        </main>
+        <footer class="footer"></footer>
+    </div>
+</body>
+</html>

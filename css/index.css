@@ -1,497 +1,558 @@
-
-/*Importante para que no se rompa las imagenes dentro de grid.*/
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: 1px solid transparent;
 }
-
-
 
 body {
-    font-family: 'Segoe UI', system-ui, -apple-system, san-serif;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #3d556d, #81e3f1);
-    align-items: center;
-    padding: 20px;
+    color: var(--texto);
+    font-family: var(--font-body);
+    background-color: var(--fondo);
+    overflow: hidden;
 }
 
-header {
-    background: rgba(255, 255, 255, 0.021);
-    padding: 18px 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    margin-bottom: 20px;
-    text-align: center;
+h1, h2, h3 {
+    font-family: var(--font-heading);
 }
 
-header:hover {
-    box-shadow: 0 4px 10px rgba(205, 239, 255, 0.733);
+:root {
+    --fondo: #f3efe0;
+    --fondo-tarjetas: #fff;
+    --lineas-cuadricula: #e2dcc8;
+    --texto: #000000;
+    --boton-enfasis: #d32f2f;
+    --texto-secundario: #4a4a4a;
+    --linea-divisoria: #000000;
+    
+    --linea-borde: 3px solid var(--linea-divisoria);
+    --borde-oscuro: 6px 6px 0px var(--linea-divisoria);
+    --borde-dark: 2px 2px 0px var(--linea-divisoria);
+
+    --font-heading: 'Bebas Neue', 'Anton', sans-serif;
+    --font-body: 'Space Grotesk', 'Inter', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
 }
 
-header h1 {
-    color: #b9cee4;
-}
-header h1:hover {
-    text-shadow: 0 1px 10px rgba(171, 230, 227, 0.932);
-    color:#e1fff4;
-}
-
-.apartado {
-    color:#b3cee7;
-    text-align: left;
-    padding: 10px;
-    margin: 5px;
-    background-color: #2c3e5018; 
-    border-radius: 20px;
+.grid {
+    display: grid;
+    grid-template-columns: 0.1fr minmax(0, 2fr);
+    grid-template-rows: 1fr minmax(0, 7fr);
+    grid-template-areas:
+    "header navegacion"
+    "aside main";
+    height: 100vh;
+    min-width: 0;
 }
 
-.apartado h2 {
-    color:#b9cee4;
-}
-
-.apartado h2:hover {
-    transform: translateY(-5px);
-    color:rgb(247, 252, 250); 
-    text-shadow: 0 4px 8px rgba(10, 107, 78, 0.87);
-
-}
-
-.menu-navegacion {
-    position: sticky;
-    top: 0;
-    z-index: 10000;
-    background-color: rgb(201, 243, 248);
+.header {
+    grid-area: header;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: rgb(0 0 0 / 80%);
-    border-radius: 20px;
-    list-style: none;
-    margin-bottom: 10px;
-    padding: 2px;
 }
 
-#hemograma {
-    scroll-margin-top: 180px;
-}
-
-#serieBlanca {
-    scroll-margin-top: 180px;
-}
-
-#serieRoja {
-    scroll-margin-top: 180px;
-}
-
-.menu {
+.aside {
+    grid-area: aside;
     display: flex;
-    justify-content: space-between;
-    text-align: center;
-    font-size: 1.9rem;
-    gap: 25px;
-    margin: 10px;
-    list-style: none;
-}
-
-.menu a {
-    text-decoration: none;
-    color:#2c3e50;
-    font-weight: 500;
-
-}
-
-nav a:hover {
-    background-color: rgba(0, 0, 0, 0.603);
-    color: #ffffff;
-    text-shadow: 0 6px 14px rgba(183, 218, 173, 0.527);
-    border-radius: 10px;
-}
-
-.intro {
-    background-color: #ffffff;
-    padding: 18px 20px;
-    border-radius: 20px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-    text-align: justify;
-    margin-bottom: 15px;
-}
-
-.intro h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #0a0f14;
-}
-
-.tarjetas-elementos {
-    /*
-    background-color:#ffffff;
-    display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: start;
     align-items: center;
-    gap: 10px;
-    margin: 12px;
-    padding: 10px 20px;
-    border-top: 20px solid #5fd8ced3;
-    border-radius: 0px 0px 20px 20px;
-    width: 50%px;
-    height: 50%;
-    *//*Tarjeta en columna horizontal*/
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto; /*Activa el scroll horizontal*/
-    gap: 15px;
-    padding-bottom: 15px;
-    scroll-behavior: smooth; /*Desplazamiento suave*/
-    scroll-snap-type: x mandatory; /*Fuerza el imán horizontal*/
-    background-color: #fff;
-    padding: 20px;
-    border-top: 20px solid #5fd8ced3;
-    border-radius: 20px;
-    margin-bottom: 20px;
+    margin: 15px;
+}
 
+.main {
+    grid-area: main;
+    display: grid;
+    padding: 20px;
+    grid-template-columns: 1fr minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "contenido1 contenido2"
+    "contenido3 contenido4"
+    "tarjeta tarjeta";
+    min-width: 0;
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    width: 100%;
+    gap: 20px 40px;
+    background-color: var(--fondo);
+    background-image:
+    linear-gradient(var(--lineas-cuadricula) 1px, transparent 1px),
+    linear-gradient(90deg, var(--lineas-cuadricula) 1px, transparent 1px);
+    background-size: 20px 20px;
+    border-left: 4px solid #000;
+}
+
+.main::-webkit-scrollbar {
+    width: 14px;
+}
+
+.main::-webkit-scrollbar-track {
+    background: var(--fondo);
+    border-left: 3px solid #111;
+}
+
+.main::-webkit-scrollbar-thumb {
+    background: #111;
+    border: 3px solid var(--fondo);
+}
+
+.main::-webkit-scrollbar-thumb:hover {
+    background: var(--boton-enfasis);
+}
+
+.contenido1 {
+    grid-area: contenido1;
+}
+
+.contenido2 {
+    grid-area: contenido2;
+}
+
+.contenido3 {
+    grid-area: contenido3;
+}
+
+.contenido4 {
+    grid-area: contenido4;
 }
 
 .tarjeta {
-    background-color:#b9cee4;
-    color: rgb(48, 59, 66);
-    border-color: rgba(10, 107, 78, 0.87);
-    border-radius: 15px;
-    padding: 10px;
-    flex: 0 0 250px; /*No cre, ni se encoge, con un ancho de 250*/
-    scroll-snap-align: center; /*Cada tarjeta se centra al detenerse*/
+    grid-area: tarjeta;
+    max-width: 100%;
+    margin-bottom: 0;
 }
 
-.tarjeta h2 {
-    color:#0a0f14;
-}
-
-
-.tarjeta:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.9);
-}
-
-.intro h2 {
-    text-align: center;
-    font-size: 1.98rem;
-    color: #0a0f14;
-}
-
-.intro p {
-    font-size: 1.5rem;
-    text-align: justify;
-}
-
-.serie-roja {
+.navegacion-temas {
+    grid-area: navegacion;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0px, 1fr));
-    gap: 20px;
-    /*background-image: url('../imagenes/eritrocitos.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    */
-    background-color:#fff;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 20px ;
-    border-top: 20px solid #5fd8ced3;
-}   
-
-.tarjeta-elementos::-webkit-srcrollbar {
-    height: 8px;
-}
-
-.tarjeta-elementos::-webkit-scrollbar-thumb {
-    background-color: #cbd5e1;
-    border-radius: 10px;
-}
-
-.tarjeta-elementos::-webkit-scrollbar-track {
-    background-color: transparent;
-}
-
-.tarjeta-roja {
-    background-color: #fc7d74c9;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-    border: 9px solid rgb(73, 26, 26);
-    text-align: center;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    justify-content: center;
-}
-
-.texto {
-    background-color:#f7d1d1d7;
-    border-radius: 20px;
-    padding: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr minmax(0, 1fr);
+    min-width: 0;
     height: auto;
-    width: auto;
-    border: 3px solid black;
+    border-left: 4px solid #000;
+    background-color: var(--fondo);
+    background-image:
+    linear-gradient(var(--lineas-cuadricula) 1px, transparent 1px),
+    linear-gradient(90deg, var(--lineas-cuadricula) 1px, transparent 1px);
+    background-size: 20px 20px;
 }
 
-.texto, h2 {
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: rgba(88, 25, 6, 0.925);
-    
-}
-
-.texto p {
-    color: rgba(23, 32, 46, 0.8); 
-}
-
-.tarjeta-roja:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 4px 8px rgba(88, 25, 6, 0.925);
-    background-color:rgb(197, 82, 47);
-}
-
-.forma {
-    padding: 0px;
-    margin: 0px;
-
-}
-
-.forma img {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
+.header p {
+    text-align: left;
+    opacity: 0.3;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-top: 5px;
 }
 
 .titulo {
-    text-align: center;
-    font-size: 1.4rem;
-    color:#ffffff;
-    background-color:rgba(23, 32, 46, 0.8);
-    padding: 10px 20px;
-    width: fit-content;
-    margin-top: 10px;
-    border-radius: 20px 20px 0px 0px;
-    margin: 0 auto -6px auto;
-
-}
-
-.titulo1 {
-    text-align: center;
-    font-size: 1.4rem;
-    color: #ffffff;
-    background-color: rgba(23, 32, 46, 0.8);
-    padding: 10px 20px;
-    width: fit-content;
-    margin-top: 10px;
-    border-radius: 20px 20px 0px 0px;
-    margin: 0 auto -20px auto;
-}
-
-.formab {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: auto;
-    padding-top: 15px;
-}
-
-.formab img {
-    width:  300px;
+    font-family: var(--font-heading);
+    font-weight: 900;
     height: auto;
-    object-fit: cover;
+    text-transform: uppercase;
+    font-size: 2.6rem;
+    box-shadow: inset 0 -21px 0 var(--boton-enfasis);
 }
 
-.incisos li {
-    text-align: justify;
-    padding: 10px;
-    letter-spacing: 1px;
-}
-
-.plantilla-hemograma {
+.lista {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 10px;
-    list-style: none;
 }
 
-.plantilla-hemograma a {
-    text-decoration: none;
-    padding: 10px;
-    font-size: 1.5rem;
-    color: #fff;
+.lista h2 {
+    font-size: 2.9rem;
+    text-transform: uppercase;
+    letter-spacing: -2px;
 }
 
-.plantilla-hemograma a:hover {
-    color:#0a0f14;
+.nav-temas {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 7.5px 10px;
+    margin: 8px;
 }
 
-button {
-    background-color:#0a0f14;
-
-    padding: 10px 24px;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.15);
+.lista .botonlista {
+    padding: 10px 100px;
+    font-size: 2rem;
+    background-color: var(--boton-enfasis);
+    display: inline-block;
+    color: var(--texto);
+    font-family: var(--font-heading);
     font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 3px solid var(--texto);
+    transform: skewX(-14deg);
+    box-shadow: var(--borde-oscuro);
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
 }
 
-button:hover {
-    background-color: #e5fdf9;
-    transform: translateY(-5px);
+.botonlista:active {
+    background-color: #e7897c;
+    color: var(--fondo-tarjetas);
 }
 
-/*Responsitive para Telefonos*/
-@media (max-width: 650px) {
+.botonlista:hover {
+    transform: skewX(-14deg) translateY(-5px);
+}
+
+.nav-temas .navmain {
+    padding: 1px 15px;
+    font-size: 1.2rem;
+    background-color: var(--fondo-tarjetas);
+    display: inline-block;
+    color: var(--texto);
+    font-family: var(--font-heading);
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 3px solid var(--texto);
+    transform: skewX(-14deg);
+    box-shadow: var(--borde-oscuro);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    gap: 20px;
+}
+
+.nav-temas .navmain:hover {
+    background-color: var(--boton-enfasis);
+    transform: translateY(-14px);
+    color: var(--fondo-tarjetas);
+}
+
+.nav-temas .navmain:active {
+    transform: skewX(-14deg) translate(2px, 2px);
+}
+
+.navegacion-inicial {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: space-around;
+    padding: 10px;
+    padding-top: 300px;
+    transform: translateY(20px);
+    gap: 40px;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+.nav-inicial {
+    padding: 15px 60px;  
+    transform: translateY(-230px);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    background-color: var(--fondo-tarjetas);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    color: var(--texto);
+    font-family: var(--font-heading);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: var(--borde-oscuro);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    border: 3px solid var(--linea-divisoria);
+    width: 100%;
+}
+
+.nav-inicial img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.nav-inicial:hover {
+    background-color: var(--boton-enfasis);
+    color: var(--fondo-tarjetas);
+}
+
+.usuario {
+    transform: translateY(110px);
+    padding: 80px 10px;
+    margin: 10px;
+    font-size: 1.3rem;
+    background-color: var(--fondo-tarjetas);
+    display: inline-block;
+    color: var(--texto);
+    font-family: var(--font-heading);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: var(--borde-oscuro);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    border: 3px solid var(--linea-divisoria);
+}
+
+.usuario h2 {
+    margin-bottom: 20px;
+    transform: translateY(-30px);
+}
+
+.usuario img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    transform: translateY(-30px);
+}
+
+.seccion {
+    display: flex;
+    gap: 10px;
+}
+
+.contenido1, .contenido2, .contenido3, .contenido4, .tarjeta {
+    background-color: var(--fondo-tarjetas);
+    border: 3px solid var(--linea-divisoria);
+    box-shadow: var(--borde-oscuro);
+    padding: 10px;
+    gap: 20px;
+}
+
+[class^="contenido"], .tarjeta {
+    background-color: #fcf9f2; 
+    border: 3px solid #111;   
+    border-radius: 4px;
+    padding: 20px;            
+    margin-bottom: 30px;
+    width: 100%;
+    box-shadow: 6px 6px 0px #111;
+    font-family: Arial, sans-serif;
+    color: #111;
+    transition: transform 0.2s ease;
+}
+
+[class^="contenido"]:hover, .tarjeta:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px #111;
+}
+
+.tarjeta-superior {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.tarjeta-icono {
+    width: 75px;
+    height: 75px;
+    border: 2px solid #111;
+}
+
+.tarjeta-icono img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tarjeta-textos h2 {
+    font-size: 1.4rem;      
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0 0 6px 0;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+}
+
+.tarjeta-meta {
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.etiqueta {
+    border: 2px solid #111;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #fff;
+}
+
+.tarjeta-descripcion {
+    font-size: 1.05rem;      
+    line-height: 1.4;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.tarjeta-inferior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #ccc;
+    padding-top: 12px;
+}
+
+.tarjeta-stats {
+    display: flex;
+    gap: 15px;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.tarjeta-stats span:first-child {
+    color: #d92d20;
+}
+
+.boton-leer {
+    background-color: transparent;
+    border: 2px solid #111;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.boton-leer:hover {
+    background-color: #111;
+    color: #fcf9f2;
+}
+
+@media (max-width: 900px) {
+    /* 1. Permitir el scroll natural en todo el body */
     body {
-        padding: 10px;
+        overflow: auto;
     }
 
-    header {
-        padding: 10px;
-        border-radius: 8px;
+    /* 2. Cambiar el Grid principal a una sola columna */
+    .grid {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
     }
 
-    header h1 {
-        font-size: 1.3rem;
+    /* 3. Ajustar el Header */
+    .header {
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px solid #000;
     }
 
-    .menu-navegacion {
-        flex-direction: column; /* El nav se apila */
-        padding: 5px;
-        gap: 3px;
-        border-radius: 10px;
+    .header h1 {
+        font-size: 2.5rem;
     }
 
-    .menu {
-        flex-direction: row; /* Los enlaces se apilan */
-        font-size: 0.81rem;
-        gap: 4px;
-        margin: 0px;
-        padding: 0;
-        flex-wrap: wrap;
+    /* 4. Ajustar la Navegación superior */
+    .navegacion-temas {
+        padding: 15px;
+        border-left: none;
+        border-bottom: 4px solid #000;
+        display: flex;
+        flex-direction: column;
     }
 
-    .menu a {
-        display: inline-block;
-        padding: 6px 10px;
-        border-radius: 8px;
-        font-size: 0.85rem;
+    .lista {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
     }
 
-    .intro {
-        padding: 12px;
-        border-radius: 12px;
+    .lista h2 {
+        font-size: 2rem;
     }
 
-    .intro h1 {
+    .lista .botonlista {
+        padding: 10px 40px;
         font-size: 1.5rem;
     }
 
-    .intro h2 {
-        font-size: 1.2rem;
+    .nav-temas {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
     }
 
-    .intro p {
+    .nav-temas .navmain {
+        padding: 8px 15px;
         font-size: 1rem;
-        text-align: left;
+        transform: skewX(-10deg);
     }
 
-
-    .tarjetas-elementos {
-        padding: 8px;
-        gap: 8px;
-        border-top: 10px solid #5fd8ced3;
-        border-radius: 10px;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
-    }
-
-    .tarjeta {
-        flex: 0 0 160px; /* Tarjetas más angostas */
-        padding: 10px;
-        min-width: 160px;
-        box-sizing: border-box;
-    }
-
-    .tarjeta h2 {
-        font-size: 1.1rem;
-    }
-
-    .tarjeta p {
-        font-size: 0.9rem;
-    }
-
-    /* Serie Roja - Una sola columna en móvil */
-    .serie-roja {
-        grid-template-columns: 1fr; /* 1 columna */
-        gap: 12px;
-        margin: 5px;
-        padding: 10px;
-        border-top: 10px solid #5fd8ced3;
-        border-radius: 12px;
-    }
-
-    .tarjeta-roja {
-        padding: 15px;
+    /* 5. Arreglar la barra lateral (Quitar los transform raros) */
+    .aside {
         margin: 0;
-        border-width: 5px;
-        border-radius: 15px;
+        padding: 20px;
+        border-right: none;
+        border-bottom: 4px solid #000;
+        background-color: var(--fondo);
     }
 
-    .titulo, .titulo1 {
-        font-size: 1rem;
-        padding: 6px 12px;
-        margin-bottom: -7px;
+    .navegacion-inicial {
+        padding-top: 0;
+        transform: none;
+        gap: 15px;
+        width: 100%;
     }
 
-    .texto {
-        padding: 8px;
-        width: 100%; /* Ocupa todo el ancho de la tarjeta */
+    .nav-inicial {
+        transform: none; /* Anula el translateY */
+        justify-content: center;
+        padding: 15px;
     }
 
-    .texto h2 {
-        font-size: 1.1rem;
+    .usuario {
+        transform: none; /* Anula el translateY */
+        margin-top: 20px;
+        text-align: center;
+        width: 100%;
     }
 
-    .texto p {
-        font-size: 0.85rem;
-        text-align: left;
+    .usuario h2, .usuario img {
+        transform: none;
     }
 
-    .forma img {
-        width: 80px;
-        height: 80px;
+    /* 6. Ajustar el Main y el contenido */
+    .main {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        overflow-y: visible; /* Quitar el scroll interno, ahora scrollea el body */
+        border-left: none;
+        padding: 15px;
+        gap: 20px;
     }
 
-    .formab img {
-        width: 100%; /* La imagen ocupa todo el ancho */
-        max-width: 280px;
+    /* 7. Acomodar las tarjetas de contenido */
+    [class^="contenido"], .tarjeta {
+        margin-bottom: 0;
+        padding: 15px;
     }
 
-    .incisos li {
-        font-size: 0.95rem;
-        padding: 8px;
+    .tarjeta-superior {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    button {
-        padding: 12px 20px;
-        font-size: 1rem;
-        width: 100%; /* Ocupan todo el ancho */
+    .tarjeta-icono {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
     }
 
-    .plantilla-hemograma {
-        flex-direction: column; /* Los botones se apilan */
-        gap: 8px;
+    .tarjeta-inferior {
+        flex-direction: column;
+        gap: 15px;
     }
 
-    .plantilla-hemograma a {
-        font-size: 1.1rem;
-        padding: 8px;
+    .boton-leer {
+        width: 100%;
     }
 }

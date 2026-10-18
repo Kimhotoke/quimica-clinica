@@ -1,0 +1,792 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: 1px solid transparent; /* Por si querías ver los bordes, cámbialo a red */
+}
+
+body {
+    color: var(--texto);
+    font-family: var(--font-body);
+    background-color: var(--fondo);
+    overflow: hidden; /* Evita que la página entera haga scroll */
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+}
+
+/* Variables */
+:root {
+    /* Colores */
+    --fondo: #f3efe0;
+    --fondo-tarjetas: #fff;
+    --lineas-cuadricula: #e2dcc8;
+    --texto: #000000;
+    --boton-enfasis: #d32f2f;
+    --texto-secundario: #4a4a4a;
+    --linea-divisoria: #000000;
+    /* Sombra y bordes */
+    --linea-borde: 3px solid var(--linea-divisoria);
+    --borde-oscuro: 6px 6px 0px var(--linea-divisoria);
+    --borde-dark: 2px 2px 0px var(--linea-divisoria);
+
+    /* Fuentes */
+    --font-heading: 'Bebas Neue', 'Anton', sans-serif;
+    --font-body: 'Space Grotesk', 'Inter', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+}
+
+/* Grid Principal */
+.grid {
+    display: grid;
+    grid-template-columns: 0.1fr minmax(0, 2fr);
+    grid-template-rows: 1fr minmax(0, 7fr);
+    grid-template-areas:
+    "header navegacion"
+    "aside main";
+    height: 100vh;
+    min-width: 0;
+}
+
+/* Áreas */
+.header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aside {
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 15px;
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+    padding: 20px;
+    grid-template-columns: 1fr minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "contenido1 contenido1"
+    "contenido1 contenido1"
+    "contenido1 contenido1";
+    min-width: 0;
+    min-height: 0; /* Crucial para evitar que rompa el grid */
+    height: 100%; /* Ocupa el 100% del espacio asignado */
+    overflow-y: auto; /* Activa el scroll interno aquí */
+    width: 100%;
+    gap: 20px 40px;
+    background-color: var(--fondo);
+    background-image:
+    linear-gradient(var(--lineas-cuadricula) 1px, transparent 1px),
+    linear-gradient(90deg, var(--lineas-cuadricula) 1px, transparent 1px);
+    background-size: 20px 20px;
+    border-left: 4px solid #000;
+}
+
+/* Estilo del scroll para el main */
+.main::-webkit-scrollbar {
+    width: 12px;
+}
+.main::-webkit-scrollbar-track {
+    background: var(--fondo);
+    border-left: 2px solid #111;
+}
+.main::-webkit-scrollbar-thumb {
+    background: #111;
+    border: 3px solid var(--fondo);
+}
+.main::-webkit-scrollbar-thumb:hover {
+    background: var(--boton-enfasis);
+}
+
+/* Grid Main */
+.contenido1 {
+    grid-area: contenido1;
+}
+.contenido2 {
+    grid-area: contenido2;
+}
+.contenido3 {
+    grid-area: contenido3;
+}
+.contenido4 {
+    grid-area: contenido4;
+}
+.tarjeta {
+    grid-area: tarjeta;
+    max-width: 100%;
+    margin-bottom: 0;
+}
+
+.navegacion-temas {
+    grid-area: navegacion;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr minmax(0, 1fr);
+    min-width: 0;
+    height: auto;
+    border-left: 4px solid #000;
+    background-color: var(--fondo);
+    background-image:
+    linear-gradient(var(--lineas-cuadricula) 1px, transparent 1px),
+    linear-gradient(90deg, var(--lineas-cuadricula) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Títulos */
+.header p {
+    text-align: left;
+    opacity: 0.8;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.titulo {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    height: auto;
+    text-transform: uppercase;
+    font-size: 2.6rem;
+    box-shadow: inset 0 -21px 0 var(--boton-enfasis);
+}
+
+/* Nav Temas */
+.lista {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.lista h2 {
+    font-size: 2.9rem;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+.nav-temas {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 7.5px 10px;
+    margin: 8px;
+}
+
+/* Botón lista */
+.lista .botonlista {
+    padding: 10px 100px;
+    font-size: 2rem;
+    background-color: var(--boton-enfasis);
+    display: inline-block;
+    color: var(--texto);
+    font-family: var(--font-heading);
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 3px solid var(--texto);
+    transform: skewX(-14deg);
+    box-shadow: var(--borde-oscuro);
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.botonlista:active {
+    background-color: #e7897c;
+    color: var(--fondo-tarjetas);
+}
+
+.botonlista:hover {
+    transform: skewX(-14deg) translateY(-5px);
+}
+
+/* Botones Temas */
+.nav-temas .navmain {
+    padding: 1px 15px;
+    font-size: 1.2rem;
+    background-color: var(--fondo-tarjetas);
+    display: inline-block;
+    color: var(--texto);
+    font-family: var(--font-heading);
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 3px solid var(--texto);
+    transform: skewX(-14deg);
+    box-shadow: var(--borde-oscuro);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    gap: 20px;
+}
+
+.nav-temas .navmain:hover {
+    background-color: var(--boton-enfasis);
+    transform: translateY(-14px);
+    color: var(--fondo-tarjetas);
+}
+
+.nav-temas .navmain:active {
+    transform: skewX(-14deg) translate(2px, 2px);
+}
+
+/* Contenido Aside */
+.navegacion-inicial {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    padding-top: 300px;
+    transform: translateY(20px);
+    gap: 40px;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+.nav-inicial {
+    padding: 15px 60px;  
+    transform: translateY(-230px);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    background-color: var(--fondo-tarjetas);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    color: var(--texto);
+    font-family: var(--font-heading);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: var(--borde-oscuro);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    border: 3px solid var(--linea-divisoria);
+    width: 100%;
+}
+
+.nav-inicial img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.nav-inicial:hover {
+    background-color: var(--boton-enfasis);
+    color: var(--fondo-tarjetas);
+}
+
+.usuario {
+    transform: translateY(110px);
+    padding: 80px 10px;
+    margin: 10px;
+    font-size: 1.3rem;
+    background-color: var(--fondo-tarjetas);
+    display: inline-block;
+    color: var(--texto);
+    font-family: var(--font-heading);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: var(--borde-oscuro);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    border: 3px solid var(--linea-divisoria);
+}
+
+.usuario h2 {
+    margin-bottom: 20px;
+    transform: translateY(-30px);
+}
+
+.usuario img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    transform: translateY(-30px);
+}
+
+/* Contenido main */
+.seccion {
+    display: flex;
+    gap: 10px;
+}
+
+/* Tarjeta Estilo Neo-Brutalista */
+[class^="contenido"], .tarjeta {
+    background-color: #fcf9f2; 
+    border: 3px solid #111;   
+    border-radius: 4px;
+    padding: 20px;            
+    margin-bottom: 30px;
+    width: 100%;
+    box-shadow: 6px 6px 0px #111;
+    font-family: Arial, sans-serif;
+    color: #111;
+    transition: transform 0.2s ease;
+}
+
+[class^="contenido"]:hover, .tarjeta:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px #111;
+}
+
+/* Parte superior de la tarjeta */
+.tarjeta-superior {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.tarjeta-icono {
+    width: 75px;
+    height: 75px;
+    border: 2px solid #111;
+}
+
+.tarjeta-icono img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tarjeta-textos h2 {
+    font-size: 1.4rem;      
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0 0 6px 0;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+}
+
+.tarjeta-meta {
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/* Etiquetas */
+.etiqueta {
+    border: 2px solid #111;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #fff;
+}
+
+/* Descripción */
+.tarjeta-descripcion {
+    font-size: 1.05rem;      
+    line-height: 1.4;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Parte inferior de la tarjeta */
+.tarjeta-inferior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #ccc;
+    padding-top: 12px;
+}
+
+.tarjeta-stats {
+    display: flex;
+    gap: 15px;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.tarjeta-stats span:first-child {
+    color: #d92d20;
+}
+
+/* Botón LEER */
+.boton-leer {
+    background-color: transparent;
+    border: 2px solid #111;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.boton-leer:hover {
+    background-color: #111;
+    color: #fcf9f2;
+}
+
+.tarjeta-contenido-interno {
+    margin-bottom: 25px;
+}
+
+.tarjeta-contenido-interno h3 {
+    font-family: var(--font-heading, 'Arial Black', sans-serif);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin: 25px 0 10px 0;
+    background-color: #111;
+    color: #fcf9f2;
+    display: inline-block;
+    padding: 4px 8px;
+}
+
+.tarjeta-contenido-interno h4 {
+    font-family: var(--font-heading, 'Arial Black', sans-serif);
+    font-size: 1.1rem;
+    margin: 15px 0 5px 0;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.tarjeta-contenido-interno p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.lista-neo, .lista-neo-viñetas {
+    margin: 15px 0 15px 20px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.lista-neo li, .lista-neo-viñetas li {
+    margin-bottom: 8px;
+}
+
+/* Botón de Plantilla (Link) */
+.contenedor-boton-plantilla {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.boton-plantilla {
+    display: inline-block;
+    background-color: var(--boton-enfasis, #d32f2f);
+    color: #fff;
+    font-family: var(--font-heading, 'Arial Black', sans-serif);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 3px solid #111;
+    box-shadow: 4px 4px 0px #111;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.boton-plantilla:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #111;
+    background-color: #111;
+    color: #fff;
+}
+
+/* Divisores entre secciones */
+.divisor-neo {
+    border: none;
+    border-top: 3px dashed #111;
+    margin: 30px 0;
+}
+
+/* Título especial para las secciones */
+.titulo-seccion-interna {
+    font-family: var(--font-heading, 'Arial Black', sans-serif);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 25px 0 10px 0;
+    color: var(--boton-enfasis, #d32f2f);
+    border-bottom: 3px solid #111;
+    padding-bottom: 5px;
+}
+
+/* El contenedor que permite el scroll horizontal */
+.carrusel-neo {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 10px 25px 10px; /* Espacio extra abajo para la sombra y el scroll */
+    margin-bottom: 20px;
+    scroll-behavior: smooth;
+}
+
+/* Personalización de la barra de scroll para que sea Neo-Brutalista */
+.carrusel-neo::-webkit-scrollbar {
+    height: 12px;
+}
+.carrusel-neo::-webkit-scrollbar-track {
+    background: var(--fondo);
+    border: 2px solid #111;
+}
+.carrusel-neo::-webkit-scrollbar-thumb {
+    background: #111;
+    border: 2px solid var(--fondo);
+    cursor: pointer;
+}
+.carrusel-neo::-webkit-scrollbar-thumb:hover {
+    background: var(--boton-enfasis);
+}
+
+/* El diseño de cada tarjeta individual */
+.tarjeta-leucocito {
+    background-color: var(--fondo-tarjetas);
+    border: 3px solid #111;
+    box-shadow: 6px 6px 0px #111;
+    padding: 15px;
+    width: 260px; /* Ancho fijo para que no se aplasten */
+    flex-shrink: 0; /* Evita que se encojan */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.tarjeta-leucocito:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px #111;
+}
+
+.tarjeta-leucocito h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #111;
+    padding-bottom: 5px;
+    color: #FFF;
+}
+
+.tarjeta-leucocito p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    color: #333;
+    flex-grow: 1; /* Empuja la imagen hacia abajo si el texto es corto */
+}
+
+/* Contenedor de la imagen para que no se deforme */
+.contenedor-imagen {
+    width: 100%;
+    height: 150px; /* Altura fija para las imágenes */
+    border: 2px solid #111;
+    background-color: var(--fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+    padding: 5px;
+}
+
+
+.tarjeta-eritrocito {
+    background-color: var(--fondo-tarjetas);
+    border: 3px solid #111;
+    border-top: 8px solid var(--boton-enfasis); /* Detalle rojo distintivo */
+    box-shadow: 6px 6px 0px #111;
+    padding: 15px;
+    width: 260px; /* Mismo ancho que las de leucocitos */
+    flex-shrink: 0; 
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.tarjeta-eritrocito:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px #111;
+}
+
+.tarjeta-eritrocito h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #111;
+    padding-bottom: 5px;
+    color: #fff;
+}
+
+.tarjeta-eritrocito p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    color: #333;
+    flex-grow: 1;
+}
+
+/* Cajas para las ecuaciones químicas */
+.caja-ejemplo-ecuacion {
+    background-color: #fff9db; /* Amarillo claro */
+    border: 3px solid #111;
+    box-shadow: 4px 4px 0px #111;
+    padding: 20px;
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 20px 0;
+    letter-spacing: 2px;
+}
+
+.caja-ejemplo-ecuacion.exitoso {
+    background-color: #ebfbee; /* Verde claro para el resultado final */
+}
+
+@media (max-width: 900px) {
+    /* 1. Permitir scroll natural en la página */
+    body {
+        overflow: auto;
+    }
+
+    /* 2. Transformar el Grid en una columna */
+    .grid {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    /* 3. Ajustar Header */
+    .header {
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px solid #000;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    /* 4. Navegación superior */
+    .navegacion-temas {
+        padding: 15px;
+        border-left: none;
+        border-bottom: 4px solid #000;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .lista {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .lista h2 {
+        font-size: 2rem;
+    }
+
+    .lista .botonlista {
+        padding: 10px 40px;
+        font-size: 1.5rem;
+    }
+
+    .nav-temas {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .nav-temas .navmain {
+        padding: 8px 15px;
+        font-size: 1rem;
+        transform: skewX(-10deg);
+    }
+
+    /* 5. Barra lateral (Quitar transforms que rompen el flujo) */
+    .aside {
+        margin: 0;
+        padding: 20px;
+        border-right: none;
+        border-bottom: 4px solid #000;
+        background-color: var(--fondo);
+    }
+
+    .navegacion-inicial {
+        padding-top: 0;
+        transform: none;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .nav-inicial {
+        transform: none; 
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .usuario {
+        transform: none; 
+        margin-top: 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .usuario h2, .usuario img {
+        transform: none;
+    }
+
+    /* 6. Contenido Principal (Flujo natural) */
+    .main {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        overflow-y: visible; 
+        border-left: none;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    /* 7. Ajustes de tarjetas y contenido interno */
+    [class^="contenido"], .tarjeta {
+        margin-bottom: 0;
+        padding: 20px 15px;
+    }
+
+    .tarjeta-superior {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .tarjeta-icono {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+
+    .tarjeta-inferior {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .boton-leer {
+        width: 100%;
+    }
+
+    /* 8. Ajuste para las ecuaciones químicas (Evitar desbordamiento) */
+    .caja-ejemplo-ecuacion {
+        font-size: 1.2rem;
+        padding: 15px;
+        overflow-x: auto; /* Permite scroll horizontal si la fórmula es muy larga */
+        white-space: nowrap;
+    }
+}

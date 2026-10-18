@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="css/hemograma.css">
+</head>
+<body>
+    <div class="grid">
+        <header class="header">
+            <h1 class="titulo">Biblioteca</h1>
+            <p>Elaborado por Ever Contreras</p>
+        </header>
+        <aside class="aside">
+            <div class="navegacion-inicial">
+                <button type="button" class="nav-inicial" onclick="window.location.href='index.html'">
+                    <img src="imagenes/logo-inicio.png" alt="inicio">
+                    <h2>Inicio</h2>
+                </button>
+                <button type="button" class="nav-inicial">
+                    <img src="imagenes/logo-tema.png" alt="inicio">
+                    <h2>Temas</h2>
+                </button>
+                <button type="button" class="nav-inicial">
+                    <img src="imagenes/logo-recurso.png" alt="inicio">
+                    <h2>Recursos</h2>
+                </button>
+            </div>
+            <div class="usuario">
+                <img src="imagenes/logo-usuario.png" alt="inicio">
+                <h2>Usuario</h2>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </aside>
+        <div class="navegacion-temas">
+            <div class="lista">
+                <h2>Explorar</h2>
+                <button type="button" class="botonlista"id="categorias">Categorias</button>
+            </div>
+            <div class="nav-temas">
+                <button type="button" class="navmain">Todos</button>
+                <button type="button" class="navmain">Teoría</button>
+                <button type="button" class="navmain">Prácticas</button>
+                <button type="button" class="navmain">Ejemplos</button>
+                <button type="button" class="navmain">Referencias</button>
+            </div>
+        </div>
+        <main class="main">
+            <!--Contenido main-->
+            <article class="contenido1">
+                <!-- Cabecera de la tarjeta -->
+                <div class="tarjeta-superior">
+                    <div class="tarjeta-icono">
+                        <img src="imagenes/logo-hemograma.jpg" alt="logo hemograma">
+                    </div>
+                    <div class="tarjeta-textos">
+                        <h2>Hemograma</h2>
+                        <div class="tarjeta-meta">
+                            <span></span> • <span>Hematología</span>
+                            <span class="etiqueta custom">TEORÍA</span>
+                            <span class="etiqueta codigo">&lt;/&gt; PDF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenido interno de la tarjeta -->
+                <div class="tarjeta-contenido-interno">
+                    <p class="tarjeta-descripcion">
+                        Un hemograma (también llamado biometría hemática o conteo sanguíneo completo), es un análisis de sangre que mide las células que circulan en ella. Se define como un análisis cuantitativo y cualitativo de los componentes celulares de la sangre periférica.
+                    </p>
+
+                    <h3>¿Qué mide el hemograma?</h3>
+                    <p>El hemograma analiza tres tipos de células:</p>
+                    <ol class="lista-neo">
+                        <li><b>Glóbulos rojos (eritrocitos):</b> Transportan oxígeno por todo el cuerpo, se evalúa su cantidad, la hemoglobina, el hematocrito y su tamaño y forma.</li>
+                        <li><b>Glóbulos blancos (leucocitos):</b> Son parte del sistema de defensa, se encuentran en total y por tipo (neutrófilo, linfocitos, monocitos, eosinófilos y basófilos).</li>
+                        <li><b>Plaquetas:</b> Ayudan a que la sangre coagule y a detener sangrados.</li>
+                    </ol>
+
+                    <h3>¿Hemograma o Hemograma completo?</h3>
+                    <p>Aunque es extremadamente frecuente, este análisis todavía provoca mucha confusión. Llamamos hemograma completo al análisis que incluye los resultados de las tres líneas celulares: recuento de hematíes, leucocitos y plaquetas.</p>
+
+                    <h3>Tipos de Hemogramas</h3>
+                    <h4>Hemograma Tipo I</h4>
+                    <p>Hemoglobina, hematocrito, recuento de eritrocitos, índices eritrocitarios (VCM, HCM, CHCM), recuento total de leucocitos y recuento diferencial de leucocitos y morfología por métodos manuales. No incluye VS.</p>
+                    
+                    <div class="contenedor-boton-plantilla">
+                        <a href="plantilla.html" class="boton-plantilla">Ver Plantilla de Hemograma</a>
+                    </div>
+
+                    <hr class="divisor-neo">
+
+                    <h2 class="titulo-seccion-interna">Serie Blanca</h2>
+
+                    <div class="carrusel-neo">
+                        
+                        <div class="tarjeta-leucocito">
+                            <h3>Neutrófilo</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure saepe aliquid reprehenderit.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/neutrófilo.png" alt="Neutrófilo">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-leucocito">
+                            <h3>Linfocito</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, at. Unde praesentium ex.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/linfocito.png" alt="Linfocito">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-leucocito">
+                            <h3>Eosinófilo</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam odio, nulla facere.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/eosinófilo.png" alt="Eosinófilo">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-leucocito">
+                            <h3>Basófilo</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam est, repudiandae repellat.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/basofilo.png" alt="Basófilo">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-leucocito">
+                            <h3>Monocito</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident eveniet molestias.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/monocito.png" alt="Monocito">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <hr class="divisor-neo">
+
+                    <h2 class="titulo-seccion-interna">Formas de los Eritrocitos</h2>
+                    <div class="carrusel-neo">
+    
+                        <div class="tarjeta-eritrocito">
+                            <h3>Microcito</h3>
+                            <p>Lorem, ipsum dolor.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/microcito.jpg" alt="Microcito">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-eritrocito">
+                            <h3>Macrocito</h3>
+                            <p>Lorem, ipsum dolor.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/macrocito.jpg" alt="Macrocito">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-eritrocito">
+                            <h3>Acantocito</h3>
+                            <p>Lorem, ipsum dolor.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/acantocito.jpg" alt="Acantocito">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-eritrocito">
+                            <h3>Equinocito</h3>
+                            <p>Lorem, ipsum dolor.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/equinocito.jpg" alt="Equinocito">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-eritrocito">
+                            <h3>Esquistocito</h3>
+                            <p>Lorem, ipsum dolor.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/esquistocito.jpg" alt="Esquistocito">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-eritrocito">
+                            <h3>Degmatocito</h3>
+                            <p>Lorem, ipsum dolor.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/degmatociot.jpg" alt="Degmatocito">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-eritrocito">
+                            <h3>Eliptocito</h3>
+                            <p>Lorem, ipsum dolor.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/eliptocito.jpg" alt="Eliptocito">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-eritrocito">
+                            <h3>Esferocito</h3>
+                            <p>Lorem, ipsum dolor.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/esferocito.jpg" alt="Esferocito">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-eritrocito">
+                            <h3>Estomasocito</h3>
+                            <p>Lorem, ipsum dolor.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/estomasocito.jpg" alt="Estomasocito">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-eritrocito">
+                            <h3>Células Diana</h3>
+                            <p>Lorem, ipsum dolor.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/celulas-diana.jpg" alt="Células Diana">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-eritrocito">
+                            <h3>Drepanocito</h3>
+                            <p>Lorem, ipsum dolor.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/drepanocitos.jpg" alt="Drepanocito">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-eritrocito">
+                            <h3>Dacriocito</h3>
+                            <p>Lorem, ipsum dolor.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/dacriocito.jpg" alt="Dacriocito">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-eritrocito">
+                            <h3>Cristales de Hemoglobina</h3>
+                            <p>Lorem, ipsum dolor.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/cristales-de-hemoglobina.jpg" alt="Cristales">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-eritrocito">
+                            <h3>Aglutinación</h3>
+                            <p>Lorem, ipsum dolor.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/aglutinacion-eritrocito.jpg" alt="Aglutinación">
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-eritrocito">
+                            <h3>Fenómeno de Rouleaux</h3>
+                            <p>Lorem, ipsum dolor.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/fenomeno-de-rouleaux.jpg" alt="Rouleaux">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </article>
+        </main>
+        <footer class="footer"></footer>
+    </div>
+</body>
+</html>
