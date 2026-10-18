@@ -58,7 +58,7 @@ h1, h2, h3 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     margin: 15px;
 }
@@ -235,19 +235,14 @@ h1, h2, h3 {
 .navegacion-inicial {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: space-around;
+    gap: 20px;
     padding: 10px;
-    padding-top: 300px;
-    transform: translateY(20px);
-    gap: 40px;
-    height: auto;
-    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .nav-inicial {
-    padding: 15px 60px;  
-    transform: translateY(-230px);
+    padding: 15px 20px;
     font-size: 0.9rem;
     text-transform: uppercase;
     background-color: var(--fondo-tarjetas);
@@ -277,31 +272,27 @@ h1, h2, h3 {
 }
 
 .usuario {
-    transform: translateY(110px);
-    padding: 80px 10px;
-    margin: 10px;
+    padding: 20px;
+    margin: 20px 0;
     font-size: 1.3rem;
     background-color: var(--fondo-tarjetas);
-    display: inline-block;
     color: var(--texto);
     font-family: var(--font-heading);
     font-weight: bold;
-    cursor: pointer;
     box-shadow: var(--borde-oscuro);
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
     border: 3px solid var(--linea-divisoria);
-}
-
-.usuario h2 {
-    margin-bottom: 20px;
-    transform: translateY(-30px);
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .usuario img {
     width: 50px;
     height: 50px;
     object-fit: contain;
-    transform: translateY(-30px);
 }
 
 .seccion {
@@ -310,14 +301,6 @@ h1, h2, h3 {
 }
 
 .contenido1, .contenido2, .contenido3, .contenido4, .tarjeta {
-    background-color: var(--fondo-tarjetas);
-    border: 3px solid var(--linea-divisoria);
-    box-shadow: var(--borde-oscuro);
-    padding: 10px;
-    gap: 20px;
-}
-
-[class^="contenido"], .tarjeta {
     background-color: #fcf9f2; 
     border: 3px solid #111;   
     border-radius: 4px;
@@ -330,7 +313,7 @@ h1, h2, h3 {
     transition: transform 0.2s ease;
 }
 
-[class^="contenido"]:hover, .tarjeta:hover {
+.contenido1:hover, .contenido2:hover, .contenido3:hover, .contenido4:hover, .tarjeta:hover {
     transform: translate(-2px, -2px);
     box-shadow: 8px 8px 0px #111;
 }
@@ -424,13 +407,11 @@ h1, h2, h3 {
     color: #fcf9f2;
 }
 
-@media (max-width: 900px) {
-    /* 1. Permitir el scroll natural en todo el body */
+@media (max-width: 1050px) {
     body {
         overflow: auto;
     }
 
-    /* 2. Cambiar el Grid principal a una sola columna */
     .grid {
         display: flex;
         flex-direction: column;
@@ -438,7 +419,6 @@ h1, h2, h3 {
         min-height: 100vh;
     }
 
-    /* 3. Ajustar el Header */
     .header {
         padding: 20px;
         text-align: center;
@@ -449,7 +429,6 @@ h1, h2, h3 {
         font-size: 2.5rem;
     }
 
-    /* 4. Ajustar la Navegación superior */
     .navegacion-temas {
         padding: 15px;
         border-left: none;
@@ -485,52 +464,48 @@ h1, h2, h3 {
         transform: skewX(-10deg);
     }
 
-    /* 5. Arreglar la barra lateral (Quitar los transform raros) */
     .aside {
         margin: 0;
         padding: 20px;
         border-right: none;
         border-bottom: 4px solid #000;
         background-color: var(--fondo);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
     }
 
     .navegacion-inicial {
-        padding-top: 0;
-        transform: none;
-        gap: 15px;
-        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: auto;
+        margin-top: 0;
     }
 
     .nav-inicial {
-        transform: none; /* Anula el translateY */
-        justify-content: center;
-        padding: 15px;
+        width: auto;
+        padding: 10px 20px;
     }
 
     .usuario {
-        transform: none; /* Anula el translateY */
-        margin-top: 20px;
-        text-align: center;
-        width: 100%;
+        margin: 0;
+        width: 250px;
     }
 
-    .usuario h2, .usuario img {
-        transform: none;
-    }
-
-    /* 6. Ajustar el Main y el contenido */
     .main {
         display: flex;
         flex-direction: column;
         height: auto;
-        overflow-y: visible; /* Quitar el scroll interno, ahora scrollea el body */
+        overflow-y: visible;
         border-left: none;
         padding: 15px;
         gap: 20px;
     }
 
-    /* 7. Acomodar las tarjetas de contenido */
-    [class^="contenido"], .tarjeta {
+    .contenido1, .contenido2, .contenido3, .contenido4, .tarjeta {
         margin-bottom: 0;
         padding: 15px;
     }
