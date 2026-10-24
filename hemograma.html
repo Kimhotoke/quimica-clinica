@@ -12,11 +12,11 @@
             <h1 class="titulo">Biblioteca</h1>
             <p>Elaborado por Ever Contreras</p>
         </header>
-        <aside class="aside">
+        <nav class="aside">
             <div class="navegacion-inicial">
                 <button type="button" class="nav-inicial" onclick="window.location.href='index.html'">
                     <img src="imagenes/logo-inicio.png" alt="inicio">
-                    <h2>Inicio</h2>
+                    <h2>Todo</h2>
                 </button>
                 <button type="button" class="nav-inicial">
                     <img src="imagenes/logo-tema.png" alt="inicio">
@@ -27,25 +27,26 @@
                     <h2>Recursos</h2>
                 </button>
             </div>
-            <div class="usuario">
+            <!-- <div class="usuario">
                 <img src="imagenes/logo-usuario.png" alt="inicio">
                 <h2>Usuario</h2>
                 <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </aside>
-        <div class="navegacion-temas">
+            </div> -->
+        </nav>
+
+        <nav class="navegacion-temas">
             <div class="lista">
                 <h2>Explorar</h2>
                 <button type="button" class="botonlista"id="categorias">Categorias</button>
             </div>
             <div class="nav-temas">
-                <button type="button" class="navmain">Todos</button>
+                <button type="button" class="navmain" onclick="window.location.href='hemograma.html'" >Inicio</button>
                 <button type="button" class="navmain">Teoría</button>
                 <button type="button" class="navmain">Prácticas</button>
                 <button type="button" class="navmain">Ejemplos</button>
                 <button type="button" class="navmain">Referencias</button>
             </div>
-        </div>
+        </nav>
         <main class="main">
             <!--Contenido main-->
             <article class="contenido1">
@@ -54,14 +55,14 @@
                     <div class="tarjeta-icono">
                         <img src="imagenes/logo-hemograma.jpg" alt="logo hemograma">
                     </div>
-                    <div class="tarjeta-textos">
+                    <!-- <div class="tarjeta-textos"> -->
                         <h2>Hemograma</h2>
-                        <div class="tarjeta-meta">
+                        <!-- <div class="tarjeta-meta">
                             <span></span> • <span>Hematología</span>
                             <span class="etiqueta custom">TEORÍA</span>
                             <span class="etiqueta codigo">&lt;/&gt; PDF</span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- Contenido interno de la tarjeta -->
@@ -97,7 +98,7 @@
                         
                         <div class="tarjeta-leucocito">
                             <h3>Neutrófilo</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure saepe aliquid reprehenderit.</p>
+                            <p>Es el más abundante 40-75% en adultos, mide alrededor de 10-15 micrómetros, tiene el núcleo segmentado en 3 a 5 lóbulos y un citoplasma pálido con gránulos finos, es la primera línea de defensa contra bacterias y hongos gracias a su capacidad de fagocitosis (aumenta en infecciones bacterianas e inflamación).</p>
                             <div class="contenedor-imagen">
                                 <img src="imagenes/neutrófilo.png" alt="Neutrófilo">
                             </div>
@@ -105,7 +106,7 @@
 
                         <div class="tarjeta-leucocito">
                             <h3>Linfocito</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, at. Unde praesentium ex.</p>
+                            <p>Representa el 20-40% de los leucocitos, es una célula pequeña de7-10 micrómetros con un núcleo redondo y oscuro que ocupa casi toda la célula, y muy poco citoplasma azul pálido, es la base de la respuesta inmune adaptativa (linfocitos B, T, y NK), aumenta en infecciones virales.</p>
                             <div class="contenedor-imagen">
                                 <img src="imagenes/linfocito.png" alt="Linfocito">
                             </div>
@@ -113,28 +114,28 @@
 
                         <div class="tarjeta-leucocito">
                             <h3>Eosinófilo</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam odio, nulla facere.</p>
+                            <p>Representa el 1-4% de los leucocitos, mide 12-17 micrómetros, tiene un núcleo bilobulado y granulos grandes color rojo-anaranjado, participa en la defensa contra parásitos y en las reacciones alérgicas, aumenta en alergias, asma y parasitosis.</p>
                             <div class="contenedor-imagen">
                                 <img src="imagenes/eosinófilo.png" alt="Eosinófilo">
                             </div>
                         </div>
 
-                        <div class="tarjeta-leucocito">
-                            <h3>Basófilo</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam est, repudiandae repellat.</p>
-                            <div class="contenedor-imagen">
-                                <img src="imagenes/basofilo.png" alt="Basófilo">
-                            </div>
-                        </div>
-
+                        
                         <div class="tarjeta-leucocito">
                             <h3>Monocito</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident eveniet molestias.</p>
+                            <p>Representa el 2-8% de los leucocitos, es el leucocito más grande 15-20 micrómetros, con un núcleo en forma de riñon o herradura y citoplasma gris azulado, se convierte en macrófagos en los tejidos y fagocita microorganismo y restos celulares.</p>
                             <div class="contenedor-imagen">
                                 <img src="imagenes/monocito.png" alt="Monocito">
                             </div>
                         </div>
-
+                        
+                        <div class="tarjeta-leucocito">
+                            <h3>Basófilo</h3>
+                            <p>Representa el 0-1% de los leucocitos, tiene gránulos grandes color azul oscuro-violeta que suelen tapar el núcleo, libera histamina y heparina participando en las reacciones alérgicas e inflamatorias.</p>
+                            <div class="contenedor-imagen">
+                                <img src="imagenes/basofilo.png" alt="Basófilo">
+                            </div>
+                        </div>
                     </div>
 
                     <hr class="divisor-neo">
@@ -145,7 +146,7 @@
                         <div class="tarjeta-eritrocito">
                             <h3>Microcito</h3>
                             <p>Lorem, ipsum dolor.</p>
-                            <div class="contenedor-imagen">
+                            <div class="contenedor-imagen-eritrocitos">
                                 <img src="imagenes/microcito.jpg" alt="Microcito">
                             </div>
                         </div>
@@ -153,7 +154,7 @@
                         <div class="tarjeta-eritrocito">
                             <h3>Macrocito</h3>
                             <p>Lorem, ipsum dolor.</p>
-                            <div class="contenedor-imagen">
+                            <div class="contenedor-imagen-eritrocitos">
                                 <img src="imagenes/macrocito.jpg" alt="Macrocito">
                             </div>
                         </div>
@@ -161,7 +162,7 @@
                         <div class="tarjeta-eritrocito">
                             <h3>Acantocito</h3>
                             <p>Lorem, ipsum dolor.</p>
-                            <div class="contenedor-imagen">
+                            <div class="contenedor-imagen-eritrocitos">
                                 <img src="imagenes/acantocito.jpg" alt="Acantocito">
                             </div>
                         </div>
@@ -169,7 +170,7 @@
                         <div class="tarjeta-eritrocito">
                             <h3>Equinocito</h3>
                             <p>Lorem, ipsum dolor.</p>
-                            <div class="contenedor-imagen">
+                            <div class="contenedor-imagen-eritrocitos">
                                 <img src="imagenes/equinocito.jpg" alt="Equinocito">
                             </div>
                         </div>
@@ -177,7 +178,7 @@
                         <div class="tarjeta-eritrocito">
                             <h3>Esquistocito</h3>
                             <p>Lorem, ipsum dolor.</p>
-                            <div class="contenedor-imagen">
+                            <div class="contenedor-imagen-eritrocitos">
                                 <img src="imagenes/esquistocito.jpg" alt="Esquistocito">
                             </div>
                         </div>
@@ -185,7 +186,7 @@
                         <div class="tarjeta-eritrocito">
                             <h3>Degmatocito</h3>
                             <p>Lorem, ipsum dolor.</p>
-                            <div class="contenedor-imagen">
+                            <div class="contenedor-imagen-eritrocitos">
                                 <img src="imagenes/degmatociot.jpg" alt="Degmatocito">
                             </div>
                         </div>
@@ -193,7 +194,7 @@
                         <div class="tarjeta-eritrocito">
                             <h3>Eliptocito</h3>
                             <p>Lorem, ipsum dolor.</p>
-                            <div class="contenedor-imagen">
+                            <div class="contenedor-imagen-eritrocitos">
                                 <img src="imagenes/eliptocito.jpg" alt="Eliptocito">
                             </div>
                         </div>
@@ -201,7 +202,7 @@
                         <div class="tarjeta-eritrocito">
                             <h3>Esferocito</h3>
                             <p>Lorem, ipsum dolor.</p>
-                            <div class="contenedor-imagen">
+                            <div class="contenedor-imagen-eritrocitos">
                                 <img src="imagenes/esferocito.jpg" alt="Esferocito">
                             </div>
                         </div>
@@ -209,7 +210,7 @@
                         <div class="tarjeta-eritrocito">
                             <h3>Estomasocito</h3>
                             <p>Lorem, ipsum dolor.</p>
-                            <div class="contenedor-imagen">
+                            <div class="contenedor-imagen-eritrocitos">
                                 <img src="imagenes/estomasocito.jpg" alt="Estomasocito">
                             </div>
                         </div>
@@ -217,7 +218,7 @@
                         <div class="tarjeta-eritrocito">
                             <h3>Células Diana</h3>
                             <p>Lorem, ipsum dolor.</p>
-                            <div class="contenedor-imagen">
+                            <div class="contenedor-imagen-eritrocitos">
                                 <img src="imagenes/celulas-diana.jpg" alt="Células Diana">
                             </div>
                         </div>
@@ -225,7 +226,7 @@
                         <div class="tarjeta-eritrocito">
                             <h3>Drepanocito</h3>
                             <p>Lorem, ipsum dolor.</p>
-                            <div class="contenedor-imagen">
+                            <div class="contenedor-imagen-eritrocitos">
                                 <img src="imagenes/drepanocitos.jpg" alt="Drepanocito">
                             </div>
                         </div>
@@ -233,7 +234,7 @@
                         <div class="tarjeta-eritrocito">
                             <h3>Dacriocito</h3>
                             <p>Lorem, ipsum dolor.</p>
-                            <div class="contenedor-imagen">
+                            <div class="contenedor-imagen-eritrocitos">
                                 <img src="imagenes/dacriocito.jpg" alt="Dacriocito">
                             </div>
                         </div>
@@ -241,7 +242,7 @@
                         <div class="tarjeta-eritrocito">
                             <h3>Cristales de Hemoglobina</h3>
                             <p>Lorem, ipsum dolor.</p>
-                            <div class="contenedor-imagen">
+                            <div class="contenedor-imagen-eritrocitos">
                                 <img src="imagenes/cristales-de-hemoglobina.jpg" alt="Cristales">
                             </div>
                         </div>
@@ -249,7 +250,7 @@
                         <div class="tarjeta-eritrocito">
                             <h3>Aglutinación</h3>
                             <p>Lorem, ipsum dolor.</p>
-                            <div class="contenedor-imagen">
+                            <div class="contenedor-imagen-eritrocitos">
                                 <img src="imagenes/aglutinacion-eritrocito.jpg" alt="Aglutinación">
                             </div>
                         </div>
@@ -257,7 +258,7 @@
                         <div class="tarjeta-eritrocito">
                             <h3>Fenómeno de Rouleaux</h3>
                             <p>Lorem, ipsum dolor.</p>
-                            <div class="contenedor-imagen">
+                            <div class="contenedor-imagen-eritrocitos">
                                 <img src="imagenes/fenomeno-de-rouleaux.jpg" alt="Rouleaux">
                             </div>
                         </div>
