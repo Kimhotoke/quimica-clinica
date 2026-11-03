@@ -621,7 +621,7 @@ h1, h2, h3 {
     height: 100vh;
     object-fit: contain;
     padding: 5px;
-    animation: micro 6s infinite alternate ease-in-out;
+    /* animation: micro 6s infinite alternate ease-in-out; */
 }
 
 

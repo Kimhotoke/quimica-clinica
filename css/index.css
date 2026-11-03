@@ -76,7 +76,7 @@ h1, h2, h3 {
     grid-template-rows: auto auto auto;
     grid-template-areas:
     "contenido1 contenido2"
-    "contenido3 contenido4"
+    "contenido3 contenido3"
     "tarjeta tarjeta";
     min-width: 0;
     height: 100%;
